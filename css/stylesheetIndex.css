@@ -115,29 +115,75 @@
   .topSection .selectionsBox,
   .topSection .fridgeBox {
     width: 100%;
-    height: 241px; }
-    .topSection .selectionsBox .boxTitle,
-    .topSection .fridgeBox .boxTitle {
-      padding-top: 6px;
+    min-height: 241px;
+    margin: 0 0;
+    padding: 0 0;
+    background: transparent; }
+    .topSection .selectionsBox .titleBox,
+    .topSection .fridgeBox .titleBox {
+      min-width: 100%;
       height: 34px;
-      margin: 0 0;
-      font-family: "Lexend Deca";
-      font-size: 18px;
-      font-weight: 600;
-      text-align: center;
-      letter-spacing: 1px;
-      text-transform: uppercase;
+      margin: 0 auto;
+      padding: 0 0;
       background: rgba(131, 153, 96, 0.8);
       border-top: 1px solid #014040;
-      border-bottom: 1px solid #014040;
-      text-shadow: 0 0 10px white; }
+      border-bottom: 1px solid #014040; }
+      .topSection .selectionsBox .titleBox .selectionTitle,
+      .topSection .selectionsBox .titleBox .fridgeTitle,
+      .topSection .fridgeBox .titleBox .selectionTitle,
+      .topSection .fridgeBox .titleBox .fridgeTitle {
+        min-width: 100%;
+        height: 34px;
+        margin: 0 auto;
+        padding: 6px 0 0 0;
+        font-family: "Lexend Deca";
+        font-size: 18px;
+        font-weight: 600;
+        text-align: center;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        text-shadow: 0 0 10px white; }
     .topSection .selectionsBox .selection,
     .topSection .selectionsBox .fridge,
     .topSection .fridgeBox .selection,
     .topSection .fridgeBox .fridge {
+      min-width: 100%;
+      min-height: 208px;
+      margin: 0 0;
       padding: 0 0;
       height: 208px;
-      background: rgba(242, 220, 107, 0.3); }
+      background: rgba(242, 220, 107, 0.3);
+      overflow-y: scroll; }
+      .topSection .selectionsBox .selection .ingredient,
+      .topSection .selectionsBox .fridge .ingredient,
+      .topSection .fridgeBox .selection .ingredient,
+      .topSection .fridgeBox .fridge .ingredient {
+        width: 112px;
+        margin: 6px auto;
+        padding: 6px 6px;
+        background: rgba(87, 58, 24, 0.8);
+        border: 1px solid #78564C;
+        border-radius: 4px; }
+      .topSection .selectionsBox .selection .ingredientImg,
+      .topSection .selectionsBox .fridge .ingredientImg,
+      .topSection .fridgeBox .selection .ingredientImg,
+      .topSection .fridgeBox .fridge .ingredientImg {
+        height: 100px;
+        width: 100px;
+        border: 1px solid #78564C; }
+      .topSection .selectionsBox .selection .ingredientName,
+      .topSection .selectionsBox .fridge .ingredientName,
+      .topSection .fridgeBox .selection .ingredientName,
+      .topSection .fridgeBox .fridge .ingredientName {
+        margin-top: 6px;
+        color: #839960;
+        font-family: "Jura";
+        font-size: 14px;
+        font-weight: 200;
+        letter-spacing: 1px;
+        text-align: center;
+        text-shadow: 0 0 2px black;
+        border-top: 1px solid #78564C; }
   .topSection .selectionsBox {
     margin-top: -2px; }
 
@@ -168,26 +214,38 @@
   */ }
   .bottomSection .recipeOneBox,
   .bottomSection .recipeTwoBox {
-    width: 100%; }
-    .bottomSection .recipeOneBox .boxTitle,
-    .bottomSection .recipeTwoBox .boxTitle {
-      padding-top: 6px;
+    width: 100%;
+    margin: 0 0;
+    padding: 0 0;
+    background: transparent; }
+    .bottomSection .recipeOneBox .titleBox,
+    .bottomSection .recipeTwoBox .titleBox {
+      min-width: 100%;
       height: 34px;
-      margin: 0 0;
-      font-family: "Lexend Deca";
-      font-size: 18px;
-      font-weight: 600;
-      text-align: center;
-      letter-spacing: 1px;
-      text-transform: uppercase;
+      margin: 0 auto;
+      padding: 0 0;
       background: rgba(131, 153, 96, 0.8);
       border-top: 1px solid #014040;
-      border-bottom: 1px solid #014040;
-      text-shadow: 0 0 10px white; }
+      border-bottom: 1px solid #014040; }
+      .bottomSection .recipeOneBox .titleBox .boxTitle,
+      .bottomSection .recipeTwoBox .titleBox .boxTitle {
+        min-width: 100%;
+        height: 34px;
+        margin: 0 auto;
+        padding: 6px 0 0 0;
+        font-family: "Lexend Deca";
+        font-size: 18px;
+        font-weight: 600;
+        text-align: center;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        text-shadow: 0 0 10px white; }
     .bottomSection .recipeOneBox .recipeOne,
     .bottomSection .recipeOneBox .recipeTwo,
     .bottomSection .recipeTwoBox .recipeOne,
     .bottomSection .recipeTwoBox .recipeTwo {
+      width: 100%;
+      margin: 0 0;
       padding: 0 0;
       min-height: 166px;
       background: rgba(242, 220, 107, 0.3);

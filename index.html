@@ -36,36 +36,41 @@
             <section class="sectionVisible sectionOne" id="section_one">
                 <!---->
                 <nav class="navbar sticky-top d-flex underNav">
-                    <form class="container-fluid d-flex">
+                    <div class="container-fluid d-flex">
                         <div class="col-xl navBtnCol">
                             <button class="button menuBtn" type="button" id="nav_btn">
                                 <img src="assets/icons/menu_green.png" class="imgOne" alt="" id="menuImg">
                                 <img src="assets/icons/nav_arrow_green.png" class="imgTwo" alt=""id="arrowImg">
                             </button>
                         </div>
-                        <div class="col-xl searchCol">
-                            <input class="form-control me-2 search" type="search" placeholder="Search" aria-label="Search">
+                        <form class="col-xl searchCol">
+                            <input class="form-control me-2 search" id="ingredientInput"" type="text" placeholder="Search" aria-label="Search">
                             <button class="button searchBtn" type="submit" id="search_btn">
                                 <img src="assets/icons/search_green.png" alt="" id="searchImg">
                             </button>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </nav>
                 <!---->
                 <article class="flex-column">
                     <div class="container-fluid topSection" id="topCol">
                         <div class="row">
                             <div class="col-xl selectionsBox">    
-                                <div class="row">
-                                    <h4 class="boxTitle">Your selection</h4>
+                                <div class="row titleBox">
+                                    <h4 class="selectionTitle">Your selection</h4>
                                 </div>
-                                <div class="row selection">
-                                    
+                                <div class="row selection" id="search_result">
+                                    <template id="tpl_ingredient">
+                                        <span class="ingredient">
+                                                <img class="ingredientImg" id="ingredient_Img" src="" alt="">
+                                                <div class="ingredientName" id="ingredient_Name"> name </div>
+                                        </span>
+                                    </template>
                                 </div>
                             </div>
                             <div class="col-xl fridgeBox" id="fridge">
-                                <div class="row">
-                                    <h4 class="boxTitle">In your fridge</h4>
+                                <div class="row titleBox">
+                                    <h4 class="fridgeTitle">In your fridge</h4>
                                 </div>
                                 <div class="row fridge">
                                     
@@ -87,7 +92,7 @@
                     <div class="container-fluid bottomSection" id="bottomCol">
                         <div class="row">
                             <div class="col-xl recipeOneBox">    
-                                <div class="row">
+                                <div class="row titleBox">
                                     <h4 class="boxTitle">Recipe 1</h4>
                                 </div>
                                 <div class="row recipeOne">
@@ -114,7 +119,7 @@
                                 </div>
                             </div>
                             <div class="col-xl recipeTwoBox" id="recipe_two">
-                                <div class="row">
+                                <div class="row titleBox">
                                     <h4 class="boxTitle">Recipe 2</h4>
                                 </div>
                                 <div class="row recipeTwo">
@@ -166,5 +171,6 @@
         </div>
     </main>
     <script src="index.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>

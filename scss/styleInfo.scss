@@ -2,21 +2,21 @@ $bgDarkred: #800018;
 $bgGreen: #8D8F53;
 $bgBrown: #78564C;
 
-$bgBrownTrans_I: rgba(150, 103, 45, 0.8);
-$bgBrownTrans_II: rgba(87, 58, 24, 0.8);
-$bgGrayTrans: rgba(255, 255, 255, 0.6);
+$bgBrownTrans_I: rgba(150, 103, 45, 0.7);
+$bgBrownTrans_II: rgba(87, 58, 24, 0.6);
+$bgGrayTrans: rgba(255, 255, 255, 0.4);
 $bgGreenTrans: rgba(131, 153, 96, 0.8);
-$bgYellowTrans_I: rgba(242, 220, 107, 0.4);
+$bgYellowTrans_I: rgba(184, 170, 100, 0.4);
 $bgYellowTrans_II: rgba(242, 220, 107, 0.3);
 
-$bordersGreen: 1px solid #014040;
-$bordersGreenThik: 2px solid #014040;
+$bordersGreen: 1px solid #013d3d;
+$bordersGreenThik: 2px solid #013d3d;
 $bordersBrwon: 1px solid #78564C;
 
-$bgButtons: #F2B035;
-$borderButtons: 1px solid #014040;
+$bgButtons: #fdcb3f;
+$borderButtons: 1px solid #013d3d;
 
-$titleColor: #014040;
+$titleColor: #013d3d;
 $textColor: #ffffff;
 $bgText: rgba(120, 86, 76, 0.6);
 
@@ -76,14 +76,14 @@ $boxShadowInset: inset 0 0 2px 1px rgba(65, 65, 65, .6), inset 0 0 1px 0 rgb(0,0
     padding: 0 0;
 
     .sectionBg {
-        background: url(/./assets/img/bgPhotoSmall.jpg) no-repeat;
+        background: url(../assets/img/bgPhotoSmall.jpg) no-repeat;
         background-size: cover;
     }
 
     .explainBox {
         width: 100%;
         min-height: 248px;
-        background: $bgYellowTrans_II;
+        //background: $bgYellowTrans_II;
 
         .boxTitle {
             height: 36px;
@@ -108,7 +108,7 @@ $boxShadowInset: inset 0 0 2px 1px rgba(65, 65, 65, .6), inset 0 0 1px 0 rgb(0,0
             justify-content: flex-start;
             margin: 10px 0 20px 0;
             padding: 4px 10px;
-            background: $bgGrayTrans;
+            background: $bgYellowTrans_I;
             border: $bordersBrwon;
             border-radius: 4px;
         }
@@ -120,30 +120,34 @@ $boxShadowInset: inset 0 0 2px 1px rgba(65, 65, 65, .6), inset 0 0 1px 0 rgb(0,0
             color: $titleColor;
             font-family: "Jura";
             font-size: 16px;
-            font-weight: 600;
+            font-weight: 800;
             letter-spacing: 1px;
             background: $bgGreenTrans;
             border: $bordersGreen;
-            border-radius: 4px;
+            border-radius: 2px;
         }
         .partText {
             margin: 0 0 8px 0;
             padding: 6px 8px;
             color: $textColor;
+            //color: black;
             font-family: "Jura";
             font-size: 13px;
-            font-weight: 200;
+            font-weight: 400;
             letter-spacing: 1px;
-            background: $bgBrownTrans_II;
+            background: $bgBrownTrans_I;
             border: $bordersBrwon;
-            border-radius: 4px;
-            text-shadow: 0 0 2px black;
+            border-radius: 2px;
+            text-shadow: 0 0 1px black;
 
             span {
                 color: $bgButtons;
                 //color: $titleColor;
                 font-weight: 600;
-                text-shadow: none;
+                text-shadow: 0 0 1px black;
+            }
+            q {
+                color: rgb(51, 86, 95);
             }
         }
     }
@@ -154,14 +158,14 @@ $boxShadowInset: inset 0 0 2px 1px rgba(65, 65, 65, .6), inset 0 0 1px 0 rgb(0,0
     padding: 0 0;
 
     .sectionBg {
-        background: url(/./assets/img/bgPhotoSmall.jpg) no-repeat;
+        background: url(../assets/img/bgPhotoSmall.jpg) no-repeat;
         background-size: cover;
     }
 
     .contactBox {
         width: 100%;
         min-height: 248px;
-        background: $bgYellowTrans_II;
+        //background: $bgYellowTrans_II;
 
         .boxTitle {
             height: 36px;
@@ -183,9 +187,9 @@ $boxShadowInset: inset 0 0 2px 1px rgba(65, 65, 65, .6), inset 0 0 1px 0 rgb(0,0
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
-            margin: 10px 0 6px 0;
-            padding: 10px 10px;
-            background: $bgGrayTrans;
+            margin: 8px 0 6px 0;
+            padding: 8px 10px;
+            background: $bgYellowTrans_I;
             border: $bordersBrwon;
             border-radius: 4px;
 
@@ -197,12 +201,11 @@ $boxShadowInset: inset 0 0 2px 1px rgba(65, 65, 65, .6), inset 0 0 1px 0 rgb(0,0
                 color: $titleColor;
                 font-family: "Jura";
                 font-size: 16px;
-                font-weight: 600;
+                font-weight: 800;
                 letter-spacing: 1px;
                 background: $bgGreenTrans;
                 border: $bordersGreen;
                 border-radius: 4px;
-                text-shadow: none;
             }
             .textareaLabel {
                 width: 84%;
@@ -211,21 +214,23 @@ $boxShadowInset: inset 0 0 2px 1px rgba(65, 65, 65, .6), inset 0 0 1px 0 rgb(0,0
             input,
             textarea {
                 margin: 0 0 8px 0;
-                padding: 6px 8px;
+                padding: 4px 8px 2px 8px;
                 color: $textColor;
                 font-family: "Jura";
                 font-size: 13px;
-                font-weight: 200;
+                font-weight: 600;
                 letter-spacing: 1px;
-                background: $bgBrownTrans_I;
+                background: $bgYellowTrans_II;
+                background: $bgGrayTrans;
                 border: $bordersBrwon;
                 border-radius: 4px;
                 text-shadow: 0 0 2px black;
                 box-shadow: inset 0 0 2px 1px rgba(0, 0, 0, 0.4);
 
                 &::placeholder {
-                    color: rgb(51, 51, 51);
-                    opacity: 1;
+                    color: rgba(0, 0, 0, 0.8);
+                    font-family: "Gugi";
+                    font-weight: 400;
                     text-shadow: none;
                 }
             }

@@ -1,14 +1,16 @@
 const getById = (id) => (document.getElementById(id));
 
 const page = getById("main");
-const moving_nav = getById("top_nav");
-const sect_one = getById("section_one");
-const nav_btn = getById("nav_btn");
-const search_btn = getById("search_btn");
+const moving_nav = getById("topNav");
+const sect_one = getById("sectionOne");
+const nav_btn = getById("navBtn");
+const search_btn = getById("searchBtn");
+const reload_btn = getById("resetBtn");
 
 const menu_img = getById("menuImg");
 const arrow_img = getById("arrowImg");
 const search_img = getById("searchImg");
+const relaod_img = getById("resetImg");
 
 const top_sect = getById("topCol");
 const bottom_sect = getById("bottomCol");
@@ -52,6 +54,12 @@ search_btn.addEventListener("mouseover", () => {
 search_btn.addEventListener("mouseout", () => {
     search_img.src = "./assets/icons/search_green.png";
 })
+reload_btn.addEventListener("mouseover", () => {
+    relaod_img .src = "./assets/icons/refresh_yellow.png";
+})
+reload_btn.addEventListener("mouseout", () => {
+    relaod_img .src = "./assets/icons/refresh_green.png";
+})
 
 const checkWindow = () => {
     const small_bg = "url(./assets/img/bgPhotoSmall.jpg) no-repeat";
@@ -80,7 +88,7 @@ const checkWindow = () => {
         sect_one.style.backgroundSize = "cover";
     }
 
-    let recipe_two = getById("recipe_two");
+    let recipe_two = getById("recipeTwo");
     let fridge = getById("fridge");
     let greenBorder = "1px solid #014040";
     if (win_width > 1199) {

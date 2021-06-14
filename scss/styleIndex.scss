@@ -6,26 +6,28 @@ $bgBrownTrans_I: rgba(150, 103, 45, 0.8);
 $bgBrownTrans_II: rgba(87, 58, 24, 0.8);
 $bgGrayTrans: rgba(255, 255, 255, 0.6);
 $bgGreenTrans: rgba(131, 153, 96, 0.8);
-$bgYellowTrans_I: rgba(242, 220, 107, 0.4);
+$bgYellowTrans_I: rgba(184, 170, 100, 0.4);
 $bgYellowTrans_II: rgba(242, 220, 107, 0.3);
 
-$bordersGreen: 1px solid #014040;
-$bordersGreenThik: 2px solid #014040;
+$bordersGreen: 1px solid #013d3d;
+$bordersGreenThik: 2px solid #013d3d;
 $bordersBrwon: 1px solid #78564C;
 
 $bgButtons: #F2B035;
-$borderButtons: 1px solid #014040;
+$borderButtons: 1px solid #013d3d;
+$bgHover: #1c6672;
 
-$titleColor: #014040;
+$titleColor: #013d3d;
 $textColor: #ffffff;
 //$ingredientColor: #028080;
-$ingredientColor: #839960;
+$ingredientColor: #97ad73;
 $bgText: rgba(120, 86, 76, 0.6);
 
 $bgPhotos: #8c5f27;
 
 $boxShadow: 0 0 2px 1px rgba(65, 65, 65, .6), 0 0 1px 0 rgb(0,0,0);
 $boxShadowInset: inset 0 0 2px 1px rgba(65, 65, 65, .6), inset 0 0 1px 0 rgb(0,0,0);
+
 
 .navbar {
     height: 44px;
@@ -34,20 +36,28 @@ $boxShadowInset: inset 0 0 2px 1px rgba(65, 65, 65, .6), inset 0 0 1px 0 rgb(0,0
     border-bottom: $bordersGreenThik;
 
     .button {
-        max-height: 29px;
+        height: 28px;
         padding: 2px 10px 2px 10px;
         color: $titleColor;
         font-size: 12px;
-        background: goldenrod;
+        background: $bgButtons;
         border: $bordersGreen;
         border-radius: 3px;
         box-shadow: $boxShadow;
     
         &:hover {
             color: $bgButtons;
-            background: rgb(28, 102, 114);
+            background: $bgHover;
             box-shadow: none;
         }
+    }
+    input:focus {
+        outline: $bordersGreen;
+        border: $bordersGreen;
+    }
+    input::-moz-focus-inner {
+        outline: $bordersGreen;
+        border: $bordersGreen;
     }
 }
 @keyframes navSlideUp {
@@ -95,13 +105,12 @@ $boxShadowInset: inset 0 0 2px 1px rgba(65, 65, 65, .6), inset 0 0 1px 0 rgb(0,0
     max-height: 38px;
     top: 0;
     margin: 0 0;
-    padding: 0 0;
-    padding-bottom: 4px;
+    padding: 0 8px;
     border-bottom: none;
 
     .button {
         width: 90px;
-        padding: 0 0;
+        padding: 0 4px;
     }
     .appName {
         margin: 5px 0 0 0;
@@ -115,11 +124,13 @@ $boxShadowInset: inset 0 0 2px 1px rgba(65, 65, 65, .6), inset 0 0 1px 0 rgb(0,0
     }
 }
 .underNav {
+    width: 100%;
     margin-top: 0;
-    padding: 0 0;
+    padding: 0 8px;
     max-height: 44px;
 
     .navBtnCol {
+
         .menuBtn {
             display: flex;
             flex-direction: column;
@@ -142,40 +153,72 @@ $boxShadowInset: inset 0 0 2px 1px rgba(65, 65, 65, .6), inset 0 0 1px 0 rgb(0,0
         }
     }
     .searchCol {
-        display: flex;
-        flex-direction: row;
-        justify-content: right;
-        width: 80%;
 
-        .search {
-            height: 28px;
-            max-width: 77%;
-            margin: 0 0;
-            padding: 2px 6px 2px 6px;
+        .form {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
             background: $bgGreen;
             border: $bordersGreen;
             border-radius: 3px;
             box-shadow: $boxShadowInset;
-    
-            &::placeholder {
-                color: rgba($titleColor, .8);
-                font-size: 14px;
+
+            .search {
+                height: 28px;
+                max-width: 200px;
+                margin: 0 0;
+                padding: 2px 6px 2px 6px;
+                background: transparent;
+                border: none;
+                &::placeholder {
+                    color: rgba($titleColor, .8);
+                    font-size: 14px;
+                }
+            }
+            input:focus {
+                outline: $bordersGreen;
+                border: $bordersGreen;
+            }
+            input::-moz-focus-inner {
+                outline: $bordersGreen;
+                border: $bordersGreen;
+            }
+            .searchBtn {
+                width: 32px;
+                height: 28px;
+                margin: 0 0;
+                padding: 0 3px 1px 3px;
+                background: rgba($bgButtons, .6);
+                border: none;
+                border-left: $bordersGreen;
+                box-shadow: $boxShadowInset;
+        
+                .searchImg {
+                    height: 17px;
+                    width: 17px;
+                }
+
+                &:hover {
+                    background: rgba($bgHover, .6);
+                }
             }
         }
-        .searchBtn {
+    }
+    .resetCol {
+
+        .resetBtn {
             width: 30px;
-            max-height: 28px;
-            margin: 0 0;
-            padding: 0 3px;
-    
-            img {
+            height: 28px;
+            margin: auto;
+            padding: 3px 3px;
+
+            .resetImg {
                 height: 17px;
                 width: 17px;
             }
         }
     }
 }
-
 .topSection {
     background: url(../assets/img/bgPhotoSmall.jpg) no-repeat;
     background-size: cover;
@@ -186,7 +229,6 @@ $boxShadowInset: inset 0 0 2px 1px rgba(65, 65, 65, .6), inset 0 0 1px 0 rgb(0,0
         min-height: 241px;
         margin: 0 0;
         padding: 0 0;
-        background: transparent;
 
         .titleBox {
             min-width: 100%;
@@ -219,23 +261,42 @@ $boxShadowInset: inset 0 0 2px 1px rgba(65, 65, 65, .6), inset 0 0 1px 0 rgb(0,0
             margin: 0 0;
             padding: 0 0;
             height: 208px;
-            background: $bgYellowTrans_II;
+            //background: $bgYellowTrans_II;
             overflow-y: scroll;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
 
-            .ingredient {
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            .ingredient, 
+            .myIngredient {
                 width: 112px;
+                max-height: 164px;
                 margin: 6px auto;
                 padding: 6px 6px;
-                background: $bgBrownTrans_II;
+                background: $bgBrownTrans_I;
                 border: $bordersBrwon;
                 border-radius: 4px;
             }
-            .ingredientImg {
-                height: 100px;
-                width: 100px;
+            .ingredientImgBox {
+                min-height: 100px;
+                max-height: 100px;
+                min-width: 100px;
+                max-width: 100px;
+                margin: 0 0 6px 0;
+                background: white;
                 border: $bordersBrwon;
+                overflow: hidden;
+            }
+            .ingredientImg {
+                width: 100px;
+                height: 90px;
             }
             .ingredientName {
+                min-height: 26px;
+                max-height: 42px;
                 margin-top: 6px;
                 color: $ingredientColor;
                 font-family: "Jura";
@@ -244,7 +305,7 @@ $boxShadowInset: inset 0 0 2px 1px rgba(65, 65, 65, .6), inset 0 0 1px 0 rgb(0,0
                 letter-spacing: 1px;
                 text-align: center;
                 text-shadow: 0 0 2px black;
-                border-top: $bordersBrwon;
+                border-top: 1px solid $ingredientColor;
             }
         }
     }
@@ -254,7 +315,7 @@ $boxShadowInset: inset 0 0 2px 1px rgba(65, 65, 65, .6), inset 0 0 1px 0 rgb(0,0
 }
 .recipeNav {
     margin: 0 0;
-    padding: 0 0;
+    padding: 0 8px;
 
     .button {
         width: 70px;
@@ -279,7 +340,6 @@ $boxShadowInset: inset 0 0 2px 1px rgba(65, 65, 65, .6), inset 0 0 1px 0 rgb(0,0
         width: 100%;
         margin: 0 0;
         padding: 0 0;
-        background: transparent;
 
         .titleBox {
             min-width: 100%;
@@ -307,13 +367,17 @@ $boxShadowInset: inset 0 0 2px 1px rgba(65, 65, 65, .6), inset 0 0 1px 0 rgb(0,0
         .recipeOne,
         .recipeTwo {
             width: 100%;
-            margin: 0 0;
-            padding: 0 0;
             min-height: 166px;
-            background: $bgYellowTrans_II;
+            margin: 0 0;
+            padding: 6px 6px;
 
             .recipeContent {
-                margin: 10px 10px;
+                box-sizing: content-box;
+                display: flex;
+                flex-direction: column;
+                margin: 6px 6px;
+                padding: 7px 6px 9px 6px;
+                background: $bgYellowTrans_I;
                 border: $bordersBrwon;
                 border-radius: 4px;
             }
@@ -321,17 +385,18 @@ $boxShadowInset: inset 0 0 2px 1px rgba(65, 65, 65, .6), inset 0 0 1px 0 rgb(0,0
                 display: flex;
                 flex-direction: row;
                 align-items: center;
-                width: 100%;
-                margin: 0 0;
-                padding: 6px 0 6px 6px;
-                background: $bgBrownTrans_I;
-                border-bottom: $bordersBrwon;
+                width: 98%;
+                margin: 6px auto;
+                padding: 6px 6px;
+                background: $bgGreenTrans;
+                border: $bordersGreen;
+                border-radius: 2px;
 
                 .recipePhoto {
                     max-width: 120px;
                     max-height: 96px;
-                    margin: 6px 0 0 0;
-                    border: $bordersBrwon;
+                    margin: 2px 6px 4px 0;
+                    border: $bordersGreen;
                 }
                 .recipeTitle {
                     margin: 0 0;
@@ -347,16 +412,18 @@ $boxShadowInset: inset 0 0 2px 1px rgba(65, 65, 65, .6), inset 0 0 1px 0 rgb(0,0
             .recipeDetails {
                 display: flex;
                 flex-direction: column;
-                width: 100%;
-                margin: 0 0;
+                width: 98%;
+                margin: 0 auto;
                 padding: 6px 6px;
-                background: $bgBrownTrans_II;
+                background: $bgBrownTrans_I;
+                border: $bordersBrwon;
+                border-radius: 2px;
 
                 .recipePhoto {
                     max-width: 120px;
                     max-height: 96px;
-                    margin: 6px 6px 0 0;
-                    border: $bordersGreen;
+                    margin: 2px 6px 4px 0;
+                    border: $bordersBrwon;
                 }
                 .recipeText {
                     margin: 0 0;
@@ -395,7 +462,7 @@ $boxShadowInset: inset 0 0 2px 1px rgba(65, 65, 65, .6), inset 0 0 1px 0 rgb(0,0
 .navBottom {
     max-height: 38px;
     margin: 0 0;
-    padding: 0 0;
+    padding: 0 6px;
 }
 .sectionVisible {
     display: flex;

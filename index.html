@@ -17,13 +17,22 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lexend+Deca&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Cairo|Catamaran|Gruppo|Gugi|Jura|Khula|Ubuntu|Varela+Round&display=swap" rel="stylesheet">
+
+    <style>
+        :focus {
+  outline: none;
+}
+
+::-moz-focus-inner {
+  border: 0;
+}
+    </style>
 </head>
 <body>
     <main id="main">
         <div class="d-flex flex-column page" id="page">
             
-            <nav class="navbar d-flex align-items-center topNav" id="top_nav">
-                <div class="container-fluid d-flex align-items-center justify-content-between">
+            <nav class="navbar container-fluid sticky-top d-flex flex-row justify-content-between topNav" id="topNav">
                     <a class="link" href="info.html#topCol">
                         <button class="button" type="button">How it works</button>
                     </a>
@@ -31,25 +40,29 @@
                     <a class="link" href="info.html#bottomCol">
                         <button class="button" type="button">Contact us</button>
                     </a>
-                </div>
             </nav>
-            <section class="sectionVisible sectionOne" id="section_one">
+            <section class="sectionVisible sectionOne" id="sectionOne">
                 <!---->
-                <nav class="navbar sticky-top d-flex underNav">
-                    <div class="container-fluid d-flex">
-                        <div class="col-xl navBtnCol">
-                            <button class="button menuBtn" type="button" id="nav_btn">
+                <nav class="navbar container-fluid sticky-top d-flex flex-row justify-content-between underNav">
+                        <div class="navBtnCol">
+                            <button class="button menuBtn" type="button" id="navBtn">
                                 <img src="assets/icons/menu_green.png" class="imgOne" alt="" id="menuImg">
                                 <img src="assets/icons/nav_arrow_green.png" class="imgTwo" alt=""id="arrowImg">
                             </button>
                         </div>
-                        <form class="col-xl searchCol">
-                            <input class="form-control me-2 search" id="ingredientInput"" type="text" placeholder="Search" aria-label="Search">
-                            <button class="button searchBtn" type="submit" id="search_btn">
-                                <img src="assets/icons/search_green.png" alt="" id="searchImg">
+                        <div class="searchCol">
+                            <form action="" class="form">
+                                <input class="form-control search" id="ingredientInput" type="text" placeholder="Search" aria-label="Search">
+                                <button class="button searchBtn" type="submit" id="searchBtn">
+                                    <img src="assets/icons/search_green.png" class="searchImg" alt="" id="searchImg">
+                                </button>
+                            </form>
+                        </div>
+                        <div class="resetCol">
+                            <button class="button resetBtn" type="button" id="resetBtn">
+                                <img src="assets/icons/refresh_green.png" class="resetImg" alt="" id="resetImg">
                             </button>
-                        </form>
-                    </div>
+                        </div>
                 </nav>
                 <!---->
                 <article class="flex-column">
@@ -59,11 +72,13 @@
                                 <div class="row titleBox">
                                     <h4 class="selectionTitle">Your selection</h4>
                                 </div>
-                                <div class="row selection" id="search_result">
-                                    <template id="tpl_ingredient">
+                                <div class="row selection" id="searchResult">
+                                    <template id="tplIngredient">
                                         <span class="ingredient">
-                                                <img class="ingredientImg" id="ingredient_Img" src="" alt="">
-                                                <div class="ingredientName" id="ingredient_Name"> name </div>
+                                            <div class="ingredientImgBox" id="ingImgBox">
+                                                <img class="ingredientImg" id="ingImg" src="" alt="">
+                                            </div>
+                                            <div class="ingredientName" id="ingName"> name </div>
                                         </span>
                                     </template>
                                 </div>
@@ -72,89 +87,79 @@
                                 <div class="row titleBox">
                                     <h4 class="fridgeTitle">In your fridge</h4>
                                 </div>
-                                <div class="row fridge">
+                                <div class="row fridge" id="inFridge">
                                     
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <nav class="navbar sticky-top d-flex align-items-center recipeNav">
-                        <div class="container-fluid d-flex align-items-center justify-content-between actualNav">
-                            <button class="button" href="#">
-                                Recipes
-                            </button>
+                    <nav class="navbar container-fluid sticky-top d-flex flex-row justify-content-between recipeNav">
+                            <a href="#recipeOne">
+                                <button class="button">
+                                    Recipes
+                                </button>
+                            </a>
                             <h3 class="appName">Smart-fridge</h3>
-                            <button class="button" href="#">
+                            <button class="button" id="chefBtn">
                                 Chef
                             </button>
-                        </div>
                     </nav>
                     <div class="container-fluid bottomSection" id="bottomCol">
                         <div class="row">
-                            <div class="col-xl recipeOneBox">    
+                            <div class="col-xl recipeOneBox" id="recipeOne">    
                                 <div class="row titleBox">
                                     <h4 class="boxTitle">Recipe 1</h4>
                                 </div>
                                 <div class="row recipeOne">
                                     <div class="col recipeContent">
-                                        <div class="row">
-                                            <div class="recipeTitleBox">
-                                                <img class="recipePhoto" src="assets/img/tomatosSmall.jpg" width="120" height="96" alt="">
-                                                <h2 class="recipeTitle">
-                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam autem dignissimos nostrum?
-                                                </h2>
-                                            </div>
+                                        <div class="recipeTitleBox">
+                                            <img class="recipePhoto" src="assets/img/tomatosSmall.jpg" width="120" height="96" alt="">
+                                            <h2 class="recipeTitle">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam autem dignissimos nostrum?
+                                            </h2>
                                         </div>
-                                        <div class="row">
-                                            <div class="recipeDetails">
-                                                <img class="recipePhoto" src="assets/img/tomatosSmall.jpg" width="120" height="96" alt="">
-                                                <p class="recipeText">
-                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia magnam nobis, quibusdam quo iste 
-                                                    voluptatibus impedit aspernatur itaque quasi mollitia cupiditate, reprehenderit quaerat omnis illo 
-                                                    iure vero fugiat quod, eum quidem soluta maiores sed? Id iste aut omnis provident nemo.
-                                                </p>
-                                            </div>
+                                        <div class="recipeDetails">
+                                            <img class="recipePhoto" src="assets/img/tomatosSmall.jpg" width="120" height="96" alt="">
+                                            <p class="recipeText">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia magnam nobis, quibusdam quo iste 
+                                                voluptatibus impedit aspernatur itaque quasi mollitia cupiditate, reprehenderit quaerat omnis illo 
+                                                iure vero fugiat quod, eum quidem soluta maiores sed? Id iste aut omnis provident nemo.
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl recipeTwoBox" id="recipe_two">
+                            <div class="col-xl recipeTwoBox" id="recipeTwo">
                                 <div class="row titleBox">
                                     <h4 class="boxTitle">Recipe 2</h4>
                                 </div>
                                 <div class="row recipeTwo">
                                     <div class="col recipeContent">
-                                        <div class="row">
-                                            <div class="recipeTitleBox">
-                                                <img class="recipePhoto" src="assets/img/tomatosSmall.jpg" width="120" height="96" alt="">
-                                                <h2 class="recipeTitle">
-                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam autem dignissimos nostrum?
-                                                </h2>
-                                            </div>
+                                        <div class="recipeTitleBox">
+                                            <img class="recipePhoto" src="assets/img/tomatosSmall.jpg" width="120" height="96" alt="">
+                                            <h2 class="recipeTitle">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam autem dignissimos nostrum?
+                                            </h2>
                                         </div>
-                                        <div class="row">
-                                            <div class="recipeDetails">
-                                                <img class="recipePhoto" src="assets/img/tomatosSmall.jpg" width="120" height="96" alt="">
-                                                <p class="recipeText">
-                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia magnam nobis, quibusdam quo iste 
-                                                    voluptatibus impedit aspernatur itaque quasi mollitia cupiditate, reprehenderit quaerat omnis illo 
-                                                    iure vero fugiat quod, eum quidem soluta maiores sed? Id iste aut omnis provident nemo.
-                                                </p>
-                                            </div>
+                                        <div class="recipeDetails">
+                                            <img class="recipePhoto" src="assets/img/tomatosSmall.jpg" width="120" height="96" alt="">
+                                            <p class="recipeText">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia magnam nobis, quibusdam quo iste 
+                                                voluptatibus impedit aspernatur itaque quasi mollitia cupiditate, reprehenderit quaerat omnis illo 
+                                                iure vero fugiat quod, eum quidem soluta maiores sed? Id iste aut omnis provident nemo.
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <nav class="navbar .sticky-bottom d-flex align-items-center navBottom">
-                        <div class="container-fluid d-flex justify-content-sm-evenly">
+                    <nav class="navbar container-fluid sticky-bottom d-flex flex-row justify-content-center navBottom">
                             <a class="arrowUp" href="#section_one">
                                 <button class="button" >
                                     Up    
                                 </button>
                             </a>
-                        </div>
                     </nav>
                 </article>
             </section>

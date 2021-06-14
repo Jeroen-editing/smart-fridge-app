@@ -1,21 +1,27 @@
 .navbar {
   height: 44px;
   background-color: #800018;
-  border-top: 2px solid #014040;
-  border-bottom: 2px solid #014040; }
+  border-top: 2px solid #013d3d;
+  border-bottom: 2px solid #013d3d; }
   .navbar .button {
-    max-height: 29px;
+    height: 28px;
     padding: 2px 10px 2px 10px;
-    color: #014040;
+    color: #013d3d;
     font-size: 12px;
-    background: goldenrod;
-    border: 1px solid #014040;
+    background: #F2B035;
+    border: 1px solid #013d3d;
     border-radius: 3px;
     box-shadow: 0 0 2px 1px rgba(65, 65, 65, 0.6), 0 0 1px 0 black; }
     .navbar .button:hover {
       color: #F2B035;
       background: #1c6672;
       box-shadow: none; }
+  .navbar input:focus {
+    outline: 1px solid #013d3d;
+    border: 1px solid #013d3d; }
+  .navbar input::-moz-focus-inner {
+    outline: 1px solid #013d3d;
+    border: 1px solid #013d3d; }
 
 @keyframes navSlideUp {
   0% {
@@ -47,12 +53,11 @@
   max-height: 38px;
   top: 0;
   margin: 0 0;
-  padding: 0 0;
-  padding-bottom: 4px;
+  padding: 0 8px;
   border-bottom: none; }
   .topNav .button {
     width: 90px;
-    padding: 0 0; }
+    padding: 0 4px; }
   .topNav .appName {
     margin: 5px 0 0 0;
     padding: 0 0;
@@ -64,8 +69,9 @@
     text-shadow: 0 0 2px black; }
 
 .underNav {
+  width: 100%;
   margin-top: 0;
-  padding: 0 0;
+  padding: 0 8px;
   max-height: 44px; }
   .underNav .navBtnCol .menuBtn {
     display: flex;
@@ -83,31 +89,52 @@
       height: 6px;
       width: 12px;
       margin-top: 2px; }
-  .underNav .searchCol {
+  .underNav .searchCol .form {
     display: flex;
     flex-direction: row;
-    justify-content: right;
-    width: 80%; }
-    .underNav .searchCol .search {
+    justify-content: center;
+    background: #8D8F53;
+    border: 1px solid #013d3d;
+    border-radius: 3px;
+    box-shadow: inset 0 0 2px 1px rgba(65, 65, 65, 0.6), inset 0 0 1px 0 black; }
+    .underNav .searchCol .form .search {
       height: 28px;
-      max-width: 77%;
+      max-width: 200px;
       margin: 0 0;
       padding: 2px 6px 2px 6px;
-      background: #8D8F53;
-      border: 1px solid #014040;
-      border-radius: 3px;
-      box-shadow: inset 0 0 2px 1px rgba(65, 65, 65, 0.6), inset 0 0 1px 0 black; }
-      .underNav .searchCol .search::placeholder {
-        color: rgba(1, 64, 64, 0.8);
+      background: transparent;
+      border: none; }
+      .underNav .searchCol .form .search::placeholder {
+        color: rgba(1, 61, 61, 0.8);
         font-size: 14px; }
-    .underNav .searchCol .searchBtn {
-      width: 30px;
-      max-height: 28px;
+    .underNav .searchCol .form input:focus {
+      outline: 1px solid #013d3d;
+      border: 1px solid #013d3d; }
+    .underNav .searchCol .form input::-moz-focus-inner {
+      outline: 1px solid #013d3d;
+      border: 1px solid #013d3d; }
+    .underNav .searchCol .form .searchBtn {
+      width: 32px;
+      height: 28px;
       margin: 0 0;
-      padding: 0 3px; }
-      .underNav .searchCol .searchBtn img {
+      padding: 0 3px 1px 3px;
+      background: rgba(242, 176, 53, 0.6);
+      border: none;
+      border-left: 1px solid #013d3d;
+      box-shadow: inset 0 0 2px 1px rgba(65, 65, 65, 0.6), inset 0 0 1px 0 black; }
+      .underNav .searchCol .form .searchBtn .searchImg {
         height: 17px;
         width: 17px; }
+      .underNav .searchCol .form .searchBtn:hover {
+        background: rgba(28, 102, 114, 0.6); }
+  .underNav .resetCol .resetBtn {
+    width: 30px;
+    height: 28px;
+    margin: auto;
+    padding: 3px 3px; }
+    .underNav .resetCol .resetBtn .resetImg {
+      height: 17px;
+      width: 17px; }
 
 .topSection {
   background: url(../assets/img/bgPhotoSmall.jpg) no-repeat;
@@ -117,8 +144,7 @@
     width: 100%;
     min-height: 241px;
     margin: 0 0;
-    padding: 0 0;
-    background: transparent; }
+    padding: 0 0; }
     .topSection .selectionsBox .titleBox,
     .topSection .fridgeBox .titleBox {
       min-width: 100%;
@@ -126,8 +152,8 @@
       margin: 0 auto;
       padding: 0 0;
       background: rgba(131, 153, 96, 0.8);
-      border-top: 1px solid #014040;
-      border-bottom: 1px solid #014040; }
+      border-top: 1px solid #013d3d;
+      border-bottom: 1px solid #013d3d; }
       .topSection .selectionsBox .titleBox .selectionTitle,
       .topSection .selectionsBox .titleBox .fridgeTitle,
       .topSection .fridgeBox .titleBox .selectionTitle,
@@ -152,44 +178,68 @@
       margin: 0 0;
       padding: 0 0;
       height: 208px;
-      background: rgba(242, 220, 107, 0.3);
-      overflow-y: scroll; }
+      overflow-y: scroll;
+      -ms-overflow-style: none;
+      scrollbar-width: none; }
+      .topSection .selectionsBox .selection::-webkit-scrollbar,
+      .topSection .selectionsBox .fridge::-webkit-scrollbar,
+      .topSection .fridgeBox .selection::-webkit-scrollbar,
+      .topSection .fridgeBox .fridge::-webkit-scrollbar {
+        display: none; }
       .topSection .selectionsBox .selection .ingredient,
+      .topSection .selectionsBox .selection .myIngredient,
       .topSection .selectionsBox .fridge .ingredient,
+      .topSection .selectionsBox .fridge .myIngredient,
       .topSection .fridgeBox .selection .ingredient,
-      .topSection .fridgeBox .fridge .ingredient {
+      .topSection .fridgeBox .selection .myIngredient,
+      .topSection .fridgeBox .fridge .ingredient,
+      .topSection .fridgeBox .fridge .myIngredient {
         width: 112px;
+        max-height: 164px;
         margin: 6px auto;
         padding: 6px 6px;
-        background: rgba(87, 58, 24, 0.8);
+        background: rgba(150, 103, 45, 0.8);
         border: 1px solid #78564C;
         border-radius: 4px; }
+      .topSection .selectionsBox .selection .ingredientImgBox,
+      .topSection .selectionsBox .fridge .ingredientImgBox,
+      .topSection .fridgeBox .selection .ingredientImgBox,
+      .topSection .fridgeBox .fridge .ingredientImgBox {
+        min-height: 100px;
+        max-height: 100px;
+        min-width: 100px;
+        max-width: 100px;
+        margin: 0 0 6px 0;
+        background: white;
+        border: 1px solid #78564C;
+        overflow: hidden; }
       .topSection .selectionsBox .selection .ingredientImg,
       .topSection .selectionsBox .fridge .ingredientImg,
       .topSection .fridgeBox .selection .ingredientImg,
       .topSection .fridgeBox .fridge .ingredientImg {
-        height: 100px;
         width: 100px;
-        border: 1px solid #78564C; }
+        height: 90px; }
       .topSection .selectionsBox .selection .ingredientName,
       .topSection .selectionsBox .fridge .ingredientName,
       .topSection .fridgeBox .selection .ingredientName,
       .topSection .fridgeBox .fridge .ingredientName {
+        min-height: 26px;
+        max-height: 42px;
         margin-top: 6px;
-        color: #839960;
+        color: #97ad73;
         font-family: "Jura";
         font-size: 14px;
         font-weight: 200;
         letter-spacing: 1px;
         text-align: center;
         text-shadow: 0 0 2px black;
-        border-top: 1px solid #78564C; }
+        border-top: 1px solid #97ad73; }
   .topSection .selectionsBox {
     margin-top: -2px; }
 
 .recipeNav {
   margin: 0 0;
-  padding: 0 0; }
+  padding: 0 8px; }
   .recipeNav .button {
     width: 70px; }
   .recipeNav .appName {
@@ -216,8 +266,7 @@
   .bottomSection .recipeTwoBox {
     width: 100%;
     margin: 0 0;
-    padding: 0 0;
-    background: transparent; }
+    padding: 0 0; }
     .bottomSection .recipeOneBox .titleBox,
     .bottomSection .recipeTwoBox .titleBox {
       min-width: 100%;
@@ -225,8 +274,8 @@
       margin: 0 auto;
       padding: 0 0;
       background: rgba(131, 153, 96, 0.8);
-      border-top: 1px solid #014040;
-      border-bottom: 1px solid #014040; }
+      border-top: 1px solid #013d3d;
+      border-bottom: 1px solid #013d3d; }
       .bottomSection .recipeOneBox .titleBox .boxTitle,
       .bottomSection .recipeTwoBox .titleBox .boxTitle {
         min-width: 100%;
@@ -245,10 +294,9 @@
     .bottomSection .recipeTwoBox .recipeOne,
     .bottomSection .recipeTwoBox .recipeTwo {
       width: 100%;
-      margin: 0 0;
-      padding: 0 0;
       min-height: 166px;
-      background: rgba(242, 220, 107, 0.3);
+      margin: 0 0;
+      padding: 6px 6px;
       /*
       .imgCol {
           margin: 0 0;
@@ -263,7 +311,12 @@
       .bottomSection .recipeOneBox .recipeTwo .recipeContent,
       .bottomSection .recipeTwoBox .recipeOne .recipeContent,
       .bottomSection .recipeTwoBox .recipeTwo .recipeContent {
-        margin: 10px 10px;
+        box-sizing: content-box;
+        display: flex;
+        flex-direction: column;
+        margin: 6px 6px;
+        padding: 7px 6px 9px 6px;
+        background: rgba(184, 170, 100, 0.4);
         border: 1px solid #78564C;
         border-radius: 4px; }
       .bottomSection .recipeOneBox .recipeOne .recipeTitleBox,
@@ -273,26 +326,27 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        width: 100%;
-        margin: 0 0;
-        padding: 6px 0 6px 6px;
-        background: rgba(150, 103, 45, 0.8);
-        border-bottom: 1px solid #78564C; }
+        width: 98%;
+        margin: 6px auto;
+        padding: 6px 6px;
+        background: rgba(131, 153, 96, 0.8);
+        border: 1px solid #013d3d;
+        border-radius: 2px; }
         .bottomSection .recipeOneBox .recipeOne .recipeTitleBox .recipePhoto,
         .bottomSection .recipeOneBox .recipeTwo .recipeTitleBox .recipePhoto,
         .bottomSection .recipeTwoBox .recipeOne .recipeTitleBox .recipePhoto,
         .bottomSection .recipeTwoBox .recipeTwo .recipeTitleBox .recipePhoto {
           max-width: 120px;
           max-height: 96px;
-          margin: 6px 0 0 0;
-          border: 1px solid #78564C; }
+          margin: 2px 6px 4px 0;
+          border: 1px solid #013d3d; }
         .bottomSection .recipeOneBox .recipeOne .recipeTitleBox .recipeTitle,
         .bottomSection .recipeOneBox .recipeTwo .recipeTitleBox .recipeTitle,
         .bottomSection .recipeTwoBox .recipeOne .recipeTitleBox .recipeTitle,
         .bottomSection .recipeTwoBox .recipeTwo .recipeTitleBox .recipeTitle {
           margin: 0 0;
           padding: 6px 6px;
-          color: #014040;
+          color: #013d3d;
           font-family: "Jura";
           font-size: 16px;
           font-weight: 600;
@@ -303,18 +357,20 @@
       .bottomSection .recipeTwoBox .recipeTwo .recipeDetails {
         display: flex;
         flex-direction: column;
-        width: 100%;
-        margin: 0 0;
+        width: 98%;
+        margin: 0 auto;
         padding: 6px 6px;
-        background: rgba(87, 58, 24, 0.8); }
+        background: rgba(150, 103, 45, 0.8);
+        border: 1px solid #78564C;
+        border-radius: 2px; }
         .bottomSection .recipeOneBox .recipeOne .recipeDetails .recipePhoto,
         .bottomSection .recipeOneBox .recipeTwo .recipeDetails .recipePhoto,
         .bottomSection .recipeTwoBox .recipeOne .recipeDetails .recipePhoto,
         .bottomSection .recipeTwoBox .recipeTwo .recipeDetails .recipePhoto {
           max-width: 120px;
           max-height: 96px;
-          margin: 6px 6px 0 0;
-          border: 1px solid #014040; }
+          margin: 2px 6px 4px 0;
+          border: 1px solid #78564C; }
         .bottomSection .recipeOneBox .recipeOne .recipeDetails .recipeText,
         .bottomSection .recipeOneBox .recipeTwo .recipeDetails .recipeText,
         .bottomSection .recipeTwoBox .recipeOne .recipeDetails .recipeText,
@@ -333,7 +389,7 @@
 .navBottom {
   max-height: 38px;
   margin: 0 0;
-  padding: 0 0; }
+  padding: 0 6px; }
 
 .sectionVisible {
   display: flex;

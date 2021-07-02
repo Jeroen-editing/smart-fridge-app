@@ -9,157 +9,165 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <!-- Bootstrap JS -->
-    <!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
     <!-- Css -->
     <link rel="stylesheet" href="css/stylesheetIndex.css">
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Lexend+Deca&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Cairo|Catamaran|Gruppo|Gugi|Jura|Khula|Ubuntu|Varela+Round&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&family=Prompt:wght@100;200;300;400;500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&family=Saira+Semi+Condensed:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <style>
-        :focus {
-  outline: none;
-}
-
-::-moz-focus-inner {
-  border: 0;
-}
-    </style>
 </head>
-<body>
+<body id="body">
     <main id="main">
         <div class="d-flex flex-column page" id="page">
-            
-            <nav class="navbar container-fluid sticky-top d-flex flex-row justify-content-between topNav" id="topNav">
-                    <a class="link" href="info.html#topCol">
-                        <button class="button" type="button">How it works</button>
-                    </a>
-                    <h3 class="appName">Smart-fridge</h3>
-                    <a class="link" href="info.html#bottomCol">
-                        <button class="button" type="button">Contact us</button>
-                    </a>
+            <nav class="navbar container-fluid sticky-top d-flex flex-row justify-content-between align-items-start topNav" id="topNav">
+                <a class="link" href="info.html#topCol">
+                    <button class="button" type="button">How it works</button>
+                </a>
+                <h3 class="appName">Smart-fridge</h3>
+                <a class="link" href="info.html#bottomCol">
+                    <button class="button" type="button">Contact us</button>
+                </a>
             </nav>
             <section class="sectionVisible sectionOne" id="sectionOne">
-                <!---->
                 <nav class="navbar container-fluid sticky-top d-flex flex-row justify-content-between underNav">
-                        <div class="navBtnCol">
-                            <button class="button menuBtn" type="button" id="navBtn">
-                                <img src="assets/icons/menu_green.png" class="imgOne" alt="" id="menuImg">
-                                <img src="assets/icons/nav_arrow_green.png" class="imgTwo" alt=""id="arrowImg">
+                    <div class="navBtnCol">
+                        <button class="button menuBtn" type="button" id="navBtn">
+                            <img src="assets/icons/menu_green.png" class="imgOne" alt="" id="menuImg">
+                            <img src="assets/icons/nav_arrow_green.png" class="imgTwo" alt=""id="arrowImg">
+                        </button>
+                    </div>
+                    <div class="searchCol">
+                        <form action="" class="form">
+                            <input class="form-control search" id="ingredientInput" type="text" placeholder="Search" aria-label="Search">
+                            <button class="button searchBtn" type="submit" id="searchBtn">
+                                <img src="assets/icons/search_green.png" class="searchImg" alt="" id="searchImg">
                             </button>
-                        </div>
-                        <div class="searchCol">
-                            <form action="" class="form">
-                                <input class="form-control search" id="ingredientInput" type="text" placeholder="Search" aria-label="Search">
-                                <button class="button searchBtn" type="submit" id="searchBtn">
-                                    <img src="assets/icons/search_green.png" class="searchImg" alt="" id="searchImg">
-                                </button>
-                            </form>
-                        </div>
-                        <div class="resetCol">
-                            <button class="button resetBtn" type="button" id="resetBtn">
-                                <img src="assets/icons/refresh_green.png" class="resetImg" alt="" id="resetImg">
-                            </button>
-                        </div>
+                        </form>
+                    </div>
+                    <div class="resetCol">
+                        <button class="button resetBtn" type="button" id="resetBtn">
+                            <img src="assets/icons/refresh_green.png" class="resetImg" alt="" id="resetImg">
+                        </button>
+                    </div>
                 </nav>
-                <!---->
                 <article class="flex-column">
                     <div class="container-fluid topSection" id="topCol">
                         <div class="row">
-                            <div class="col-xl selectionsBox">    
+                            <div class="col-sm selectionsBox">    
                                 <div class="row titleBox">
                                     <h4 class="selectionTitle">Your selection</h4>
                                 </div>
                                 <div class="row selection" id="searchResult">
-                                    <template id="tplIngredient">
-                                        <span class="ingredient">
-                                            <div class="ingredientImgBox" id="ingImgBox">
-                                                <img class="ingredientImg" id="ingImg" src="" alt="">
-                                            </div>
-                                            <div class="ingredientName" id="ingName"> name </div>
-                                        </span>
-                                    </template>
                                 </div>
                             </div>
-                            <div class="col-xl fridgeBox" id="fridge">
+                            <div class="col-sm fridgeBox" id="fridge">
                                 <div class="row titleBox">
                                     <h4 class="fridgeTitle">In your fridge</h4>
                                 </div>
+                                <div class="row temporary" id="inTemporary">
+                                </div>
                                 <div class="row fridge" id="inFridge">
-                                    
                                 </div>
                             </div>
                         </div>
                     </div>
                     <nav class="navbar container-fluid sticky-top d-flex flex-row justify-content-between recipeNav">
-                            <a href="#recipeOne">
-                                <button class="button">
-                                    Recipes
-                                </button>
-                            </a>
-                            <h3 class="appName">Smart-fridge</h3>
-                            <button class="button" id="chefBtn">
-                                Chef
+                        <a class="col" href="#recipeOne">
+                            <button class="button buttonOnload" id="chefBtn">
+                                Chefs choices
                             </button>
+                        </a>
+                        <button class="col nameButton" id="nameBtn">
+                            <h3 class="appName" >Smart-fridge</h3>
+                        </button>
+                        <a class="col" href="#recipeOne">
+                            <button class="button buttonOnload" id="recipesBtn">
+                                More Recipes
+                            </button>
+                            <button class="button buttonOnload" id="searchRecipesBtn">
+                                Get Recipes
+                        </button>
+                        </a>
                     </nav>
                     <div class="container-fluid bottomSection" id="bottomCol">
                         <div class="row">
-                            <div class="col-xl recipeOneBox" id="recipeOne">    
-                                <div class="row titleBox">
+                            <div class="col-lg recipeOneBox" id="recipeOne">    
+                                <div class="row mainTitleBox">
                                     <h4 class="boxTitle">Recipe 1</h4>
                                 </div>
                                 <div class="row recipeOne">
-                                    <div class="col recipeContent">
+                                    <div class="col recipeContent contentHidden">
                                         <div class="recipeTitleBox">
-                                            <img class="recipePhoto" src="assets/img/tomatosSmall.jpg" width="120" height="96" alt="">
-                                            <h2 class="recipeTitle">
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam autem dignissimos nostrum?
-                                            </h2>
+                                            <div class="photoBox" id="titlePhoto">
+                                                <img class="recipePhoto" src="" width="120" height="96" alt="">
+                                            </div>
+                                            <div class="recipeTitle">
+                                            </div>
                                         </div>
-                                        <div class="recipeDetails">
-                                            <img class="recipePhoto" src="assets/img/tomatosSmall.jpg" width="120" height="96" alt="">
+                                        <div class="recipeDetails" id="leftDetails">
+                                            <div class="photoBox" id="articlePhoto">
+                                                <img class="recipePhoto" src="" width="120" height="96" alt="">
+                                            </div>
                                             <p class="recipeText">
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia magnam nobis, quibusdam quo iste 
-                                                voluptatibus impedit aspernatur itaque quasi mollitia cupiditate, reprehenderit quaerat omnis illo 
-                                                iure vero fugiat quod, eum quidem soluta maiores sed? Id iste aut omnis provident nemo.
                                             </p>
+                                            <div class="titleBox">
+                                                <h4 class="ingredientsTitle">Ingredients:</h4>
+                                            </div>
+                                            <div class="ingredientsList">
+                                            </div>
+                                            <div class="titleBox">
+                                                <h4 class="instructionsTitle">Instructions:</h4>
+                                            </div>
+                                            <div class="recipeInstructions">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl recipeTwoBox" id="recipeTwo">
-                                <div class="row titleBox">
+                            <div class="col-lg recipeTwoBox" id="recipeTwo">
+                                <div class="row mainTitleBox">
                                     <h4 class="boxTitle">Recipe 2</h4>
                                 </div>
                                 <div class="row recipeTwo">
-                                    <div class="col recipeContent">
+                                    <div class="col recipeContent contentHidden">
                                         <div class="recipeTitleBox">
-                                            <img class="recipePhoto" src="assets/img/tomatosSmall.jpg" width="120" height="96" alt="">
-                                            <h2 class="recipeTitle">
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam autem dignissimos nostrum?
-                                            </h2>
+                                            <div class="photoBox" id="titlePhoto">
+                                                <img class="recipePhoto" src="" width="120" height="96" alt="">
+                                            </div>
+                                            <div class="recipeTitle">
+                                            </div>
                                         </div>
-                                        <div class="recipeDetails">
-                                            <img class="recipePhoto" src="assets/img/tomatosSmall.jpg" width="120" height="96" alt="">
+                                        <div class="recipeDetails"  id="rightDetails">
+                                            <div class="photoBox" id="articlePhoto">
+                                                <img class="recipePhoto" src="" width="120" height="96" alt="">
+                                            </div>
                                             <p class="recipeText">
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia magnam nobis, quibusdam quo iste 
-                                                voluptatibus impedit aspernatur itaque quasi mollitia cupiditate, reprehenderit quaerat omnis illo 
-                                                iure vero fugiat quod, eum quidem soluta maiores sed? Id iste aut omnis provident nemo.
                                             </p>
+                                            <div class="titleBox">
+                                                <h4 class="ingredientsTitle">Ingredients:</h4>
+                                            </div>
+                                            <div class="ingredientsList">
+                                            </div>
+                                            <div class="titleBox">
+                                                <h4 class="instructionsTitle">Instructions:</h4>
+                                            </div>
+                                            <div class="recipeInstructions">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <nav class="navbar container-fluid sticky-bottom d-flex flex-row justify-content-center navBottom">
-                            <a class="arrowUp" href="#section_one">
-                                <button class="button" >
-                                    Up    
-                                </button>
-                            </a>
+                    <nav class="navbar container-fluid fixed-bottom d-flex flex-row justify-content-end navBottom" id="bottomNav">
+                        <a class="arrowUp" href="#sectionOne">
+                            <button class="button" id="upBtn">
+                                Up    
+                            </button>
+                        </a>
                     </nav>
                 </article>
             </section>

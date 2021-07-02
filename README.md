@@ -18,7 +18,7 @@ And ofcourse food at home!
 
 #### Step 1
 Go to this link:
-°°https://jeroen-editing.github.io/smart-fridge-app/index.html°°.
+https://jeroen-editing.github.io/smart-fridge-app/index.html.
 
 #### Step 2
 Enter your ingredients in the input field and click on search.

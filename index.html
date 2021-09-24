@@ -21,18 +21,18 @@
 </head>
 <body id="body">
     <main id="main">
-        <div class="d-flex flex-column page" id="page">
-            <nav class="navbar container-fluid sticky-top d-flex flex-row justify-content-between align-items-start topNav" id="topNav">
-                <a class="link" href="info.html#topCol">
-                    <button class="button" type="button">How it works</button>
-                </a>
-                <h3 class="appName">Smart-fridge</h3>
-                <a class="link" href="info.html#bottomCol">
-                    <button class="button" type="button">Contact us</button>
-                </a>
-            </nav>
-            <section class="sectionVisible sectionOne" id="sectionOne">
-                <nav class="navbar container-fluid sticky-top d-flex flex-row justify-content-between underNav">
+        <div class="page" id="page">
+            <nav class="navbar fixed-top topNav" id="topNav">
+                <div class="d-flex justify-content-between align-items-start topRow">
+                    <a class="link" href="info.html#topCol">
+                        <button class="button" type="button">How it works</button>
+                    </a>
+                    <h3 class="appName">Smart-fridge</h3>
+                    <a class="link" href="info.html#bottomCol">
+                        <button class="button" type="button">Contact us</button>
+                    </a>
+                </div>
+                <div class="d-flex justify-content-between align-items-center bottomRow">
                     <div class="navBtnCol">
                         <button class="button menuBtn" type="button" id="navBtn">
                             <img src="assets/icons/menu_green.png" class="imgOne" alt="" id="menuImg">
@@ -52,47 +52,316 @@
                             <img src="assets/icons/refresh_green.png" class="resetImg" alt="" id="resetImg">
                         </button>
                     </div>
-                </nav>
-                <article class="flex-column">
-                    <div class="container-fluid topSection" id="topCol">
-                        <div class="row">
-                            <div class="col-sm selectionsBox">    
-                                <div class="row titleBox">
-                                    <h4 class="selectionTitle">Your selection</h4>
-                                </div>
-                                <div class="row selection" id="searchResult">
-                                </div>
+                </div>
+            </nav>
+            <section class="section" id="section">
+                <div class="container-fluid fridgeSection sectionHidden" id="fridgeSection">
+                    <div class="row sectionRow">
+                        <div class="col-sm selectionsBox">
+                            <div class="titleBox">
+                                <button type="button" class="mealMenuBtn" id="mealMenuBtn">
+                                    <img class="mealImg" src="assets/icons/checkbox_green2.png" alt="">
+                                </button>
+                                <h4 class="selectionTitle">Your selection</h4>  
                             </div>
-                            <div class="col-sm fridgeBox" id="fridge">
-                                <div class="row titleBox">
-                                    <h4 class="fridgeTitle">In your fridge</h4>
+                            <div class="row selection" id="searchResult">
+                                <!--
+                                <div class="ingredient ingrVisible" id="btn">
+                                    <div class="ingredientImgBox" id="ingImgBox">
+                                        <img class="ingredientImg" id="ingImg" src="assets/img/tomatos.jpg" alt="">
+                                    </div>
+                                    <div class="ingredientName" id="ingName">tomaat pasta</div>
                                 </div>
-                                <div class="row temporary" id="inTemporary">
+                                <div class="ingredient ingrVisible" id="btn">
+                                    <div class="ingredientImgBox" id="ingImgBox">
+                                        <img class="ingredientImg" id="ingImg" src="assets/img/tomatos.jpg" alt="">
+                                    </div>
+                                    <div class="ingredientName" id="ingName">tomaat pasta</div>
                                 </div>
-                                <div class="row fridge" id="inFridge">
+                                <div class="ingredient ingrVisible" id="btn">
+                                    <div class="ingredientImgBox" id="ingImgBox">
+                                        <img class="ingredientImg" id="ingImg" src="assets/img/tomatos.jpg" alt="">
+                                    </div>
+                                    <div class="ingredientName" id="ingName">tomaat pasta</div>
                                 </div>
+                                <div class="ingredient ingrVisible" id="btn">
+                                    <div class="ingredientImgBox" id="ingImgBox">
+                                        <img class="ingredientImg" id="ingImg" src="assets/img/tomatos.jpg" alt="">
+                                    </div>
+                                    <div class="ingredientName" id="ingName">tomaat pasta</div>
+                                </div>
+                                <div class="ingredient ingrVisible" id="btn">
+                                    <div class="ingredientImgBox" id="ingImgBox">
+                                        <img class="ingredientImg" id="ingImg" src="assets/img/tomatos.jpg" alt="">
+                                    </div>
+                                    <div class="ingredientName" id="ingName">tomaat pasta</div>
+                                </div>
+                                <div class="ingredient ingrVisible" id="btn">
+                                    <div class="ingredientImgBox" id="ingImgBox">
+                                        <img class="ingredientImg" id="ingImg" src="assets/img/tomatos.jpg" alt="">
+                                    </div>
+                                    <div class="ingredientName" id="ingName">tomaat pasta</div>
+                                </div>
+                                <div class="ingredient ingrVisible" id="btn">
+                                    <div class="ingredientImgBox" id="ingImgBox">
+                                        <img class="ingredientImg" id="ingImg" src="assets/img/tomatos.jpg" alt="">
+                                    </div>
+                                    <div class="ingredientName" id="ingName">tomaat pasta</div>
+                                </div>
+                                <div class="ingredient ingrVisible" id="btn">
+                                    <div class="ingredientImgBox" id="ingImgBox">
+                                        <img class="ingredientImg" id="ingImg" src="assets/img/tomatos.jpg" alt="">
+                                    </div>
+                                    <div class="ingredientName" id="ingName">tomaat pasta</div>
+                                </div>
+                                -->
+                            </div>
+                        </div>
+                        <div class="col-sm fridgeBox" id="fridge">
+                            <div class="titleBox">
+                                <h4 class="fridgeTitle">In your fridge</h4>
+                            </div>
+                            <div class="row temporary" id="inTemporary">
+                                <!--
+                                <div class="selected ingrVisible" id="btn">
+                                    <div class="ingredientImgBox" id="ingImgBox">
+                                        <img class="ingredientImg" id="ingImg" src="assets/img/tomatos.jpg" alt="">
+                                    </div>
+                                    <div class="ingredientName" id="ingName">tomaat pasta</div>
+                                </div>
+                                <div class="selected ingrVisible" id="btn">
+                                    <div class="ingredientImgBox" id="ingImgBox">
+                                        <img class="ingredientImg" id="ingImg" src="assets/img/tomatos.jpg" alt="">
+                                    </div>
+                                    <div class="ingredientName" id="ingName">tomaat pasta</div>
+                                </div>
+                                <div class="selected ingrVisible" id="btn">
+                                    <div class="ingredientImgBox" id="ingImgBox">
+                                        <img class="ingredientImg" id="ingImg" src="assets/img/tomatos.jpg" alt="">
+                                    </div>
+                                    <div class="ingredientName" id="ingName">tomaat pasta</div>
+                                </div>
+                                <div class="selected ingrVisible" id="btn">
+                                    <div class="ingredientImgBox" id="ingImgBox">
+                                        <img class="ingredientImg" id="ingImg" src="assets/img/tomatos.jpg" alt="">
+                                    </div>
+                                    <div class="ingredientName" id="ingName">tomaat pasta</div>
+                                </div>
+                                <div class="selected ingrVisible" id="btn">
+                                    <div class="ingredientImgBox" id="ingImgBox">
+                                        <img class="ingredientImg" id="ingImg" src="assets/img/tomatos.jpg" alt="">
+                                    </div>
+                                    <div class="ingredientName" id="ingName">tomaat pasta</div>
+                                </div>
+                                <div class="selected ingrVisible" id="btn">
+                                    <div class="ingredientImgBox" id="ingImgBox">
+                                        <img class="ingredientImg" id="ingImg" src="assets/img/tomatos.jpg" alt="">
+                                    </div>
+                                    <div class="ingredientName" id="ingName">tomaat pasta</div>
+                                </div>
+                                <div class="selected ingrVisible" id="btn">
+                                    <div class="ingredientImgBox" id="ingImgBox">
+                                        <img class="ingredientImg" id="ingImg" src="assets/img/tomatos.jpg" alt="">
+                                    </div>
+                                    <div class="ingredientName" id="ingName">tomaat pasta</div>
+                                </div>
+                                <div class="selected ingrVisible" id="btn">
+                                    <div class="ingredientImgBox" id="ingImgBox">
+                                        <img class="ingredientImg" id="ingImg" src="assets/img/tomatos.jpg" alt="">
+                                    </div>
+                                    <div class="ingredientName" id="ingName">tomaat pasta</div>
+                                </div>
+                                -->
+                            </div>
+                            <div class="row fridge" id="inFridge">
+                                <!--
+                                <div class="myIngredient ingrVisible" id="btn">
+                                    <div class="ingredientImgBox" id="ingImgBox">
+                                        <img class="ingredientImg" id="ingImg" src="assets/img/tomatos.jpg" alt="">
+                                    </div>
+                                    <div class="ingredientName" id="ingName">tomaat pasta</div>
+                                </div>
+                                <div class="myIngredient ingrVisible" id="btn">
+                                    <div class="ingredientImgBox" id="ingImgBox">
+                                        <img class="ingredientImg" id="ingImg" src="assets/img/tomatos.jpg" alt="">
+                                    </div>
+                                    <div class="ingredientName" id="ingName">tomaat pasta</div>
+                                </div>
+                                <div class="myIngredient ingrVisible" id="btn">
+                                    <div class="ingredientImgBox" id="ingImgBox">
+                                        <img class="ingredientImg" id="ingImg" src="assets/img/tomatos.jpg" alt="">
+                                    </div>
+                                    <div class="ingredientName" id="ingName">tomaat pasta</div>
+                                </div>
+                                <div class="myIngredient ingrVisible" id="btn">
+                                    <div class="ingredientImgBox" id="ingImgBox">
+                                        <img class="ingredientImg" id="ingImg" src="assets/img/tomatos.jpg" alt="">
+                                    </div>
+                                    <div class="ingredientName" id="ingName">tomaat pasta</div>
+                                </div>
+                                <div class="myIngredient ingrVisible" id="btn">
+                                    <div class="ingredientImgBox" id="ingImgBox">
+                                        <img class="ingredientImg" id="ingImg" src="assets/img/tomatos.jpg" alt="">
+                                    </div>
+                                    <div class="ingredientName" id="ingName">tomaat pasta</div>
+                                </div>
+                                <div class="myIngredient ingrVisible" id="btn">
+                                    <div class="ingredientImgBox" id="ingImgBox">
+                                        <img class="ingredientImg" id="ingImg" src="assets/img/tomatos.jpg" alt="">
+                                    </div>
+                                    <div class="ingredientName" id="ingName">tomaat pasta</div>
+                                </div>
+                                <div class="myIngredient ingrVisible" id="btn">
+                                    <div class="ingredientImgBox" id="ingImgBox">
+                                        <img class="ingredientImg" id="ingImg" src="assets/img/tomatos.jpg" alt="">
+                                    </div>
+                                    <div class="ingredientName" id="ingName">tomaat pasta</div>
+                                </div>
+                                <div class="myIngredient ingrVisible" id="btn">
+                                    <div class="ingredientImgBox" id="ingImgBox">
+                                        <img class="ingredientImg" id="ingImg" src="assets/img/tomatos.jpg" alt="">
+                                    </div>
+                                    <div class="ingredientName" id="ingName">tomaat pasta</div>
+                                </div>
+                                -->
                             </div>
                         </div>
                     </div>
-                    <nav class="navbar container-fluid sticky-top d-flex flex-row justify-content-between recipeNav">
-                        <a class="col" href="#recipeOne">
-                            <button class="button buttonOnload" id="chefBtn">
-                                Chefs choices
-                            </button>
-                        </a>
-                        <button class="col nameButton" id="nameBtn">
+                </div>
+                <div class="container-fluid mealTypesSection sectionVisible" id="mealTypesSection">
+                    <div class="row titleRow">
+                        <div class="col-xl titleBox">
+                            <h4 class="mealTitle">Meal Selector</h4>
+                        </div>
+                    </div>
+                    <form class="row typesAndDietsForm" id="typesAndDiets">
+                        <div class="typesCol">
+                            <div class="formTitleBox">
+                                <h3 class="typesTitle">Mealtypes</h3>
+                            </div>
+                            <div class="mealTypes" id="mealTypes">
+                                <div class="typerow">
+                                    <div class="checkBtn">
+                                        <input type="checkbox" id="dinner" name="types" value="main course"/>
+                                        <label for="dinner">Main course</label>
+                                    </div>
+                                    <div class="checkBtn">
+                                        <input type="checkbox" id="side" name="types" value="side dish" />
+                                        <label for="side">Side dish</label>
+                                    </div>
+                                </div>
+                                <div class="typerow">
+                                    <div class="checkBtn">
+                                        <input type="checkbox" id="dessert" name="types" value="dessert" />
+                                        <label for="dessert">Dessert</label>
+                                    </div>
+                                    <div class="checkBtn">
+                                        <input type="checkbox" id="appetizer" name="types" value="appetizer" />
+                                        <label for="appetizer">Appetizer</label>
+                                    </div>
+                                </div>
+                                <div class="typerow">
+                                    <div class="checkBtn">
+                                        <input type="checkbox" id="salad" name="types" value="salad" />
+                                        <label for="salad">Salad</label>
+                                    </div>
+                                    <div class="checkBtn">
+                                        <input type="checkbox" id="bread" name="types" value="bread" />
+                                        <label for="bread">Bread</label>
+                                    </div>
+                                </div>
+                                <div class="typerow">
+                                    <div class="checkBtn">
+                                        <input type="checkbox" id="breakfast" name="types" value="breakfast" />
+                                        <label for="breakfast">Breakfast</label>
+                                    </div>
+                                    <div class="checkBtn">
+                                        <input type="checkbox" id="soup" name="types" value="soup" />
+                                        <label for="soup">Soup</label>
+                                    </div>
+                                </div>
+                                <div class="typerow">
+                                    <div class="checkBtn">
+                                        <input type="checkbox" id="beverage" name="types" value="beverage" />
+                                        <label for="beverage">Beverage</label>
+                                    </div>
+                                    <div class="checkBtn">
+                                        <input type="checkbox" id="sauce" name="types" value="sauce" />
+                                        <label for="sauce">Sauce</label>
+                                    </div>
+                                </div>
+                                <div class="typerow">
+                                    <div class="checkBtn">
+                                        <input type="checkbox" id="marinade" name="type" value="marinade" />
+                                        <label for="marinade">Marinade</label>
+                                    </div>
+                                    <div class="checkBtn">
+                                        <input type="checkbox" id="fingerfood" name="type" value="fingerfood" />
+                                        <label for="fingerfood">Fingerfood</label>
+                                    </div>
+                                </div>
+                                <div class="typerow">
+                                    <div class="checkBtn">
+                                        <input type="checkbox" id="snack" name="type" value="snack" />
+                                        <label for="snack">Snack</label>
+                                    </div>
+                                    <div class="checkBtn">
+                                        <input type="checkbox" id="drink" name="type" value="drink" />
+                                        <label for="drink">Drink</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dietsCol">
+                            <div class="formTitleBox">
+                                <h3 class="dietsTitle">Diets</h3>
+                            </div>
+                            <div class="diets" id="diets">
+                                <div class="row checkBtn">
+                                    <input type="radio" id="none" name="diets" value="none" checked/>
+                                    <label for="none">None</label>
+                                </div>
+                                <div class="row checkBtn">
+                                    <input type="radio" id="gluttenfree" name="diets" value="glutten free" />
+                                    <label for="gluttenfree">Glutten Free</label>
+                                </div>
+                                <div class="row checkBtn">
+                                    <input type="radio" id="vegi" name="diets" value="vegetarian" />
+                                    <label for="vegi">Vegetarian</label>
+                                </div>
+                                <div class="row checkBtn">
+                                    <input type="radio" id="lactovegi" name="diets" value="lactovegetarian" />
+                                    <label for="lactovegi">Lacto-Vegetarian</label>
+                                </div>
+                                <div class="row checkBtn">
+                                    <input type="radio" id="ovovegi" name="diets" value="ovovegetarian" />
+                                    <label for="ovovegi">Ovo-Vegetarian</label>
+                                </div>
+                                <div class="row checkBtn">
+                                    <input type="radio" id="vegan" name="diets" value="vegan" />
+                                    <label for="vegan">Vegan</label>
+                                </div>
+                            </div>
+                            <div class="submitTypes" id="submitBox">
+                                <button type="button" class="submitBtn" id="mealTypeBtn">OK</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <nav class="navbar sticky-top d-flex justify-content-between align-items-center recipeNav" id="recipeNav">
+                    <a class="btn" href="#recipeOne">
+                        <button class="button buttonOnload" id="chefBtn">Chefs choices</button>
+                    </a>
+                    <button class="nameButton" id="nameBtn">
                             <h3 class="appName" >Smart-fridge</h3>
-                        </button>
-                        <a class="col" href="#recipeOne">
-                            <button class="button buttonOnload" id="recipesBtn">
-                                More Recipes
-                            </button>
-                            <button class="button buttonOnload" id="searchRecipesBtn">
-                                Get Recipes
-                        </button>
-                        </a>
-                    </nav>
-                    <div class="container-fluid bottomSection" id="bottomCol">
+                    </button>
+                    <a class="btn" href="#recipeOne">
+                        <button class="button buttonOnload" id="recipesBtn">More Recipes</button>
+                        <button class="button buttonOnload" id="searchRecipesBtn">Get Recipes</button>
+                    </a>
+                </nav>
+                <article class="flex-row bottomCol">
+                    <div class="container-fluid bottomSection" id="bottomSection">
                         <div class="row">
                             <div class="col-lg recipeOneBox" id="recipeOne">    
                                 <div class="row mainTitleBox">
@@ -162,28 +431,22 @@
                             </div>
                         </div>
                     </div>
-                    <nav class="navbar container-fluid fixed-bottom d-flex flex-row justify-content-end navBottom" id="bottomNav">
-                        <a class="arrowUp" href="#sectionOne">
-                            <button class="button" id="upBtn">
-                                Up    
-                            </button>
+                    <nav class="navbar container-fluid fixed-bottom d-flex justify-content-end navUp" id="upNav">
+                        <a class="upLink" href="#section">
+                            <button class="button upBtn" id="upBtn">Up</button>
                         </a>
                     </nav>
                 </article>
-            </section>
-            <section class="sectionHidden">
-                <div class="row">
-                    <div class="col">
-                        <div class="row">
-                            <div class="col-md text-center">how it works</div>
-                            <div class="col-md text-center">contact</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+                <nav class="navbar sticky-bottom d-flex justify-content-between align-items-start bottomNav" id="bottomNav">
+                    <a class="moreLink" href="#bottomSection">
+                        <button class="button moreBtn" id="moreBtn">New recipes</button>
+                    </a>
+                </nav>
+            </section>    
+        </div>  
         </div>
     </main>
     <script src="index.js"></script>
-    <script src="app.js"></script>
+    <script src="app2.js"></script>
 </body>
 </html>

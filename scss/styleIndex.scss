@@ -1,22 +1,27 @@
 $bgDarkred: #800018;
 $bgGreen: #8D8F53;
 $bgBrown: rgb(124, 85, 38);
+$accentcolor: #ca9C27;
 
 $bgBrownTrans_I: rgba(150, 103, 45, 0.8);
 $bgBrownTrans_II: rgba(87, 58, 24, 0.8);
-$bgGrayTrans: rgba(255, 255, 255, 0.6);
+$bgGrayTrans: rgba(151, 151, 151, 0.6);
 $bgGreenTrans_I: rgba(131, 153, 96, 0.8);
 $bgGreenTrans_II: rgba(111, 129, 82, 0.8);
 $bgYellowTrans_I: rgba(#F2B035, 0.8);
 $bgYellowTrans_II: rgba(#ca9c27, 0.8);
+$bgYellowTrans_III: rgba(196, 162, 67, 0.7);
 
 $bordersGreen: 1px solid #013d3d;
 $bordersGreenThik: 2px solid #013d3d;
 $bordersBrwon: 1px solid #78564C;
+$borderYellow: 1px solid #ca9C27;
+$borderYellowTrans: 1px solid rgba(#ca9C27, .8);
 
 $bgButtons: #F2B035;
 $borderButtons: 1px solid #013d3d;
 $bgHover: #1c6672;
+$bgCheked: #305d64;
 
 $titleColor: #013d3d;
 $textColor: #ffffff;
@@ -27,232 +32,354 @@ $bgText: rgba(120, 86, 76, 0.6);
 
 $bgPhotos: #8c5f27;
 
-$boxShadow: 2px 2px 4px 0 rgba(26, 26, 26, 0.1), -2px -2px 4px 0 rgba(26, 26, 26, 0.1), 1px 1px 1px 1px rgba(0,0,0,.2), -1px -1px 1px 1px rgba(0,0,0,.2);
+$boxShadow: 2px 2px 4px 0 rgba(20, 20, 20, 0.1), -2px -2px 4px 0 rgba(20, 20, 20, 0.1), 1px 1px 1px 1px rgba(0,0,0,.2), -1px -1px 1px 1px rgba(0,0,0,.2);
 $boxShadowInset: inset 2px 2px 4px 0 rgba(26, 26, 26, 0.1), inset -2px -2px 4px 0 rgba(26, 26, 26, 0.1), inset 1px 1px 1px 1px rgba(0,0,0,.3), inset -1px -1px 1px 1px rgba(0,0,0,.3);
+$lightShadow:  1px 1px 1px 0 rgba(192, 186, 95, 0.1), -1px -1px 1px 0 rgba(192, 186, 95,.1);
+$lightShadowInset:  inset 1px 1px 1px 0 rgba(192, 186, 95, 0.1), inset -1px -1px 1px 0 rgba(192, 186, 95,.1);
 
+* {
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    margin: 0 0;
+    padding: 0 0;
+}
 body {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 0;
     background: url(../assets/img/bgPhotoSmall.jpg) no-repeat;
     background-size: cover;
     background-attachment: fixed;
 }
+main {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.6);
+}
+.page {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 0;
+    box-shadow: 2px 2px 2px 1px rgba(20,20,20,.3), -2px -2px 2px 1px rgba(20,20,20,.3);
+    //1px 1px 1px 0 rgba(0,0,0,.4), -1px -1px 1px 0 rgba(0,0,0,.4);
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+@keyframes navSlideUp {
+    0% {
+        top: 0px;
+    }
+    50% {
+        top: 0px;
+    }
+    100% {
+        top: -32px;
+    }
+}
+@keyframes navSlideDown {
+    0% {
+        top: -32px;
+    }
+    100% {
+        top: 0px;
+    }
+}
+@keyframes pageMoveUp {
+    0% {
+        margin-top: 71px;
+    }
+    50% {
+        margin-top: 71px;
+    }
+    100% {
+        margin-top: 38px;
+    }
+}
+@keyframes pageMoveDown {
+    0% {
+        margin-top: 38px;
+    }
+    100% {
+        margin-top: 71px;
+    }
+}
 .navbar {
-    height: 44px;
+    min-width: 100%;
+    max-width: 100%;
+    margin: 0 0;
+    padding: 0 0;
     background-color: $bgDarkred;
     border-top: $bordersGreenThik;
     border-bottom: $bordersGreenThik;
 
     .button {
-        height: 28px;
-        padding: 2px 10px 2px 10px;
         color: $titleColor;
         font-family: "Prompt";
         font-size: 12px;
+        letter-spacing: 0px;
         background: $bgButtons;
         border: $bordersGreen;
         border-radius: 3px;
         box-shadow: $boxShadow;
         cursor: pointer;
-    
+
         &:hover {
             color: $bgButtons;
             background: $bgHover;
             box-shadow: none;
         }
     }
-    input:focus {
-        outline: $bordersGreen;
-        border: $bordersGreen;
-    }
-    input::-moz-focus-inner {
-        outline: $bordersGreen;
-        border: $bordersGreen;
-    }
 }
-@keyframes navSlideUp {
-    0% {
-        top: 0;
-    }
-    50% {
-        top: 0;
-    }
-    100% {
-        top: -38px;
-    }
-}
-@keyframes navSlideDown {
-    0% {
-        top: -38px;
-    }
-    100% {
-        top: 0;
-    }
-}
-@keyframes pageMoveUp {
-    0% {
-        margin-top: 38px;
-    }
-    50% {
-        margin-top: 38px;
-    }
-    100% {
-        margin-top: 0;
-    }
-}
-@keyframes pageMoveDown {
-    0% {
-        margin-top: 0;
-    }
-    100% {
-        margin-top: 38px;
-    }
-}
-
 .topNav {
-    position: fixed;
-    width: 100%;
-    max-height: 38px;
-    top: 0;
-    margin: 0 0;
-    padding: 4px 8px;
-    border-bottom: none;
+    border-top: none;
+    z-index: 3;
 
-    .button {
-        width: 92px;
-        height: 22px;
-        padding: 1px 4px 2px 4px;
-    }
-    .appName {
-        margin: 4px auto 0 auto;
-        padding: 0 0;
-        color: #F2B035;
-        font-family: "Saira Semi Condensed";
-        font-size: 16px;
-        font-weight: 300;
-        text-align: center;
-        letter-spacing: 1px;
-        text-shadow: 0 0 2px black;
-    }
-}
-.underNav {
-    width: 100%;
-    max-height: 44px;
-    margin-top: 0;
-    padding: 0 8px;
+    .topRow {
+        min-width: 100%;
+        max-width: 100%;
+        min-height: 32px;
+        padding: 0 6px;
+        border-bottom: 1px solid rgba(#013d3d, .18);
 
-    .navBtnCol {
-        .menuBtn {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            max-height: 27px;
-            padding: 3px 6px 3px 6px;
-            visibility: hidden;
-            opacity: 0;
+        .link {
+            width: 92px;
+            color: $titleColor;
+            text-decoration: none;
+            padding: 0 0;
+            margin: 2px 0 0 0;
     
-            .imgOne {
-                height: 12px;
-                width: 14px;
-            }
-            .imgTwo {
-                height: 6px;
-                width: 12px;
-                //margin-top: 1px;
+            .button {
+                width: 92px;
+                min-height: 20px;
+                margin: 0 0;
+                padding: 0 4px 2px 4px;
             }
         }
+        .appName {
+            margin: 6px auto 0 auto;
+            padding: 0 0;
+            color: $bgButtons;
+            font-family: "Saira Semi Condensed";
+            font-size: 16px;
+            font-weight: 300;
+            text-align: center;
+            letter-spacing: 1px;
+            text-shadow: 0 0 3px black;
+        }
     }
-    .searchCol {
-        .form {
+    .bottomRow {
+        min-width: 100%;
+        max-width: 100%;
+        min-height: 38px;
+        padding: 0 6px;
+
+        .button {
             display: flex;
-            flex-direction: row;
-            justify-content: center;
-            background: $bgGreenTrans_I;
-            border: $bordersGreen;
-            border-radius: 3px;
-            box-shadow: $boxShadowInset;
-
-            .search {
-                height: 28px;
-                max-width: 200px;
-                margin: 0 0;
-                padding: 2px 6px 2px 6px;
-                color: $inputColor;
-                font-family: "Prompt";
-                font-size: 14px;
-                font-weight: 200;
-                background: transparent;
-                border: none;
-
-                &::placeholder {
-                    color: rgba($titleColor, .8);
+            align-items: center;
+            width: 28px;
+            height: 26px;
+        }
+        .navBtnCol {
+            margin: 0 0;
+            padding: 0 0;
+    
+            .menuBtn {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin: 0 auto;
+                box-shadow: $lightShadow;
+                visibility: hidden;
+                opacity: 0;
+        
+                .imgOne {
+                    height: 12px;
+                    width: 14px;
+                    margin: 0 auto;
+                }
+                .imgTwo {
+                    height: 6px;
+                    width: 12px;
+                    margin: 0 auto;
+                }
+            }
+        }
+        .searchCol {
+            margin: 0 0;
+            padding: 0 0;
+    
+            .form {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                background: $bgGreenTrans_I;
+                border: $bordersGreen;
+                border-radius: 3px;
+                box-shadow: $boxShadowInset;
+    
+                .search {
+                    height: 25px;
+                    width: 180px;
+                    margin: 0 0;
+                    padding: 2px 6px 2px 8px;
+                    color: $inputColor;
                     font-family: "Prompt";
                     font-size: 14px;
-                    font-weight: 100;
+                    font-weight: 200;
+                    background: transparent;
+                    border: none;
+    
+                    &::placeholder {
+                        color: rgba($titleColor, .8);
+                        font-family: "Prompt";
+                        font-size: 14px;
+                        font-weight: 100;
+                    }
                 }
-            }
-            input:focus {
-                outline: $bordersGreen;
-                border: $bordersGreen;
-            }
-            input::-moz-focus-inner {
-                outline: $bordersGreen;
-                border: $bordersGreen;
-            }
-            .searchBtn {
-                width: 32px;
-                height: 28px;
-                margin: 0 0;
-                padding: 0 3px 1px 3px;
-                background: rgba($bgButtons, .6);
-                border: none;
-                border-left: $bordersGreen;
-                box-shadow: $boxShadowInset;
-        
-                .searchImg {
-                    height: 17px;
-                    width: 17px;
+                input:focus {
+                    outline: $bordersGreen;
+                    border: $bordersGreen;
                 }
-
-                &:hover {
-                    background: rgba($bgHover, .6);
+                input::-moz-focus-inner {
+                    outline: $bordersGreen;
+                    border: $bordersGreen;
+                }
+                .searchBtn {
+                    display: flex;
+                    align-items: center;
+                    min-width: 26px;
+                    height: 25px;
+                    margin: 0 0;
+                    padding: 0 0;
+                    background: rgba($bgButtons, .6);
+                    border: none;
+                    border-left: $bordersGreen;
+                    box-shadow: $boxShadowInset;
+            
+                    .searchImg {
+                        height: 15px;
+                        width: 15px;
+                        margin: 0 auto;
+                    }
+                    &:hover {
+                        background: rgba($bgHover, .6);
+                    }
                 }
             }
         }
-    }
-    .resetCol {
-        .resetBtn {
-            width: 30px;
-            height: 27px;
-            margin: auto;
-            padding: 3px 3px;
-
-            .resetImg {
-                height: 17px;
-                width: 17px;
+        .resetCol {
+            margin: 0 0;
+            padding: 0 0;
+    
+            .resetBtn {
+                display: flex;
+                align-items: center;
+                margin: auto;
+                padding: 2px 3px 3px 3px;
+                box-shadow: $lightShadow;
+    
+                .resetImg {
+                    height: 15px;
+                    width: 15px;
+                    margin: 0 auto;
+                }
             }
         }
     }
 }
-.topSection {
+
+@keyframes blink {
+	0% {
+		background-color: lighten($accentcolor, 15%);
+	}
+	10% {
+		background-color: lighten($accentcolor, 15%);
+	}
+	11% {
+		background-color: lighten($accentcolor, 20%);
+	}
+	29% {
+		background-color: lighten($accentcolor, 20%);
+	}
+	30% {
+		background-color: lighten($accentcolor, 15%);
+	}
+	50% {
+		background-color: lighten($accentcolor, 20%);
+	}
+	45% {
+		background-color: lighten($accentcolor, 15%);
+	}
+	50% {
+		background-color: lighten($accentcolor, 20%);
+	}
+	100% {
+		background-color: lighten($accentcolor, 15%);
+	}
+}
+.section {
+    width: 100%;
+    max-width: 100%;
+    margin: 71px 0 0 0;
+    padding: 0 0;
+
+    .bottomCol {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 0;
+        padding: 0 0;
+    }
+    .topCol {
+        .sectionVisible {
+            display: block;
+        }
+        .sectionHidden {
+            display: none;
+        }
+    }
+}
+.fridgeSection,
+.mealTypeSection {
+    width: 100%;
+    margin: 0 0;
+    padding: 0 0;
+}
+.fridgeSection {
+    max-width: 100%;
+
+    .sectionRow {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 0;
+        padding: 0 0;
+    }
     .selectionsBox,
     .fridgeBox {
         width: 100%;
-        min-height: 241px;
+        max-width: 100%;
+        height: 496px;
         margin: 0 0;
         padding: 0 0;
-
+        border: none;
+        
         .titleBox {
-            min-width: 100%;
+            width: 100%;
+            max-width: 100%;
             height: 34px;
-            margin: 0 auto;
-            padding: 0 0;
+            margin: 0 0;
+            padding: 0 6px;
             background: $bgYellowTrans_II;
             border-top: $bordersGreen;
             border-bottom: $bordersGreen;
 
             .selectionTitle,
-            .fridgeTitle {
-                min-width: 100%;
+            .fridgeTitle,
+            .mealTitle {
+                width: 100%;
+                max-width: 100%;
                 height: 34px;
                 margin: 0 auto;
                 padding: 6px 0 0 0;
@@ -263,29 +390,79 @@ body {
                 letter-spacing: 1px;
                 text-transform: uppercase;
                 text-shadow: 0 0 3px white;
+                border: none;
             }
         }
+    }
+    .selectionsBox {
+        .titleBox {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+            width: 100%;
+            max-width: 100%;
+            padding: 0 6px;
+
+            .selectionTitle {
+                min-width: 72%;
+                max-width: 72%;
+                margin-left: 20px;
+            }
+        }
+        .mealMenuBtn {
+            display: flex;
+            align-items: center;
+            min-width: 26px;
+            min-height: 24px;
+            margin: 0 0;
+            padding: 0 0;
+            background: $bgButtons;
+            border: $bordersGreen;
+            border-radius: 3px;
+            box-shadow: $lightShadow;
+
+            .mealImg {
+                width: 14px;
+                height: 14px;
+                margin: 0 auto;
+            }
+            &:hover {
+                color: $bgButtons;
+                background: $bgHover;
+                box-shadow: none;
+            }
+        }
+        .menuBtnHidden {
+            opacity: 0;
+        }
+        .menuBtnVisible {
+            animation: 1s fadeIn forwards;
+        }
+    }
+    .selectionsBox,
+    .fridgeBox {
+        height: 248px;
+
         .selection,
         .temporary,
         .fridge {
             align-items: center;
             margin: 0 0;
-            padding: 2px 4%;
+            padding: 2px 6%;
             overflow-y: scroll;
             -ms-overflow-style: none;
             scrollbar-width: none;
+            background: rgba(white, .8);
 
             &::-webkit-scrollbar {
                 display: none;
             }
             .ingredientImgBox {
-                min-width: 60px;
-                max-width: 60px;
-                min-height: 50px;
-                max-height: 50px;
+                width: 60px;
+                height: 50px;
                 margin: 3px auto;
                 background: white;
-                //border: 1px solid $bgBrownTrans_I;
                 box-shadow: $boxShadowInset;
                 overflow: hidden;
             }
@@ -295,24 +472,15 @@ body {
             }
             .ingredientName {
                 width: 60px;
-                min-height: 32px;
-                max-height: 36px;
+                height: 36px;
                 margin: 6px auto 0 auto;
                 padding: 2px 2px;
-                color: $ingredientColor;
-                //color: $bgYellowTrans_III;
-                //color: $bgBrownTrans_II;
-                //color: $titleColor;
                 font-family: "Prompt";
                 font-size: 10px;
                 font-weight: 300;
                 text-align: center;
-                //letter-spacing: 1px;
                 line-height: 13px;
-                //text-shadow: 0 1px 2px rgba(39, 39, 39, 0.6);
                 border-top: 1px solid rgba($titleColor, .4);
-                //border-top: 1px solid $bgBrownTrans_I;
-                //border-radius: 3px;
             }
             .ingrHidden {
                 display: none;
@@ -324,34 +492,30 @@ body {
         .selection {
             height: 100%;
             width: 100%;
-            min-height: 210px;
-            max-height: 210px;
+            height: 210px;
+            padding: 0 4%;
 
             .ingredient {
                 width: 66px;
-                min-height: 92px;
-                max-height: 92px;
+                height: 92px;
                 margin: 6px auto;
                 padding: 0 0;
-                //background: $bgBrownTrans_I;
-                //background: $bgYellowTrans_I;
                 background: $bgGreenTrans_II;
                 box-shadow: $boxShadow;
             }
         }
         .temporary,
         .fridge {
-            min-height: 100px;
-            max-height: 100px;
             width: 100%;
+            height: 100px;
+            padding: 0 4%;
         }
         .temporary {
             border-bottom: 1px solid rgba($titleColor, .2);
 
             .selected {
                 width: 66px;
-                min-height: 92px;
-                max-height: 92px;
+                height: 92px;
                 margin: 6px auto;
                 padding: 0 0;
                 background: $bgGreenTrans_II;
@@ -364,8 +528,7 @@ body {
             }
             .myIngredient {
                 width: 66px;
-                min-height: 90px;
-                max-height: 90px;
+                height: 90px;
                 margin: 6px auto;
                 padding: 0 0;
                 background: $bgBrownTrans_I;
@@ -373,47 +536,339 @@ body {
             }
         }
     }
-    .selectionsBox {
-        margin-top: -2px;
+}
+.mealTypesSection {
+    width: 100%;
+    max-width: 576px;
+    min-height: 496px;
+    margin: 0 auto;
+    padding: 0 0;
+    background: url(../assets/img/bgPhotoSmall.jpg);
+    background-size: cover;
+    border: none;
+    box-shadow: $boxShadow;
+
+    .titleRow,
+    .typesAndDietsForm {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 0;
+        padding: 0 0;
+    }
+    .titleRow {
+        width: 100%;
+        max-width: 100%;
+        min-height: 32px;
+        margin: 0 0;
+        padding: 0 0;
+        background: #ca9c27;
+        border: none;
+
+        .titleBox {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 100%;
+            max-width: 100%;
+            min-height: 32px;
+            margin: 0 0;
+            padding: 2px 0 0 0;
+            border: none;
+            
+            .mealTitle {
+                width: 100%;
+                max-width: 100%;
+                min-height: 18px;
+                margin: 0 0;
+                padding: 0 0;
+                font-family: "Quicksand";
+                font-size: 18px;
+                font-weight: 700;
+                text-align: center;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                text-shadow: 0 0 3px white;
+                border: none;
+            }
+        }
+    }
+    .typesAndDietsForm {
+        width: 100%;
+        max-width: 100%;
+        height: 496px;
+        margin: 0 0;
+        padding: 0 0;
+        background: rgba(rgb(255, 255, 255),.8);
+        border: none;
+
+        .typesCol,
+        .dietsCol {
+            width: 100%;
+            max-width: 100%;
+            margin: 0 0;
+            padding: 0 0;
+        }
+        .formTitleBox {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            max-width: 100%;
+            min-height: 26px;
+            margin: 0 0;
+            padding: 3px 0 0 0;
+            background: $bgGreen;
+            border-top: $bordersGreen;
+            border-bottom: $bordersGreen;
+
+            .typesTitle,
+            .dietsTitle {
+                min-height: 24px;
+                margin: 0 0;
+                padding: 0 0;
+                color: $titleColor;
+                font-family: "Quicksand";
+                font-size: 16px;
+                font-weight: 600;
+                letter-spacing: 2px;
+                text-align: center;
+            }
+        }
+        .mealTypes,
+        .diets {
+            width: 100%;
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 6px 6px 2px 6px;
+            z-index: 5;
+
+            .checkBtn {
+                position: relative;
+                display: block;
+                min-width: 43%;
+                max-width: 43%;
+                margin: 0 auto;
+                padding: 0 0;
+            }
+            label {
+                display: block;
+                height: 23px;
+                margin: 0 0;
+                padding: 1px 36px 0 3px;
+                color: $listColor;
+                font-family: "Prompt";
+                font-size: 12px;
+                font-weight: 400;
+                text-align: right;
+                background: $bgYellowTrans_III;
+                border: 1px solid rgba(121, 121, 121, 0.6);
+                border-radius: 4px;
+                cursor: pointer;
+
+                &:after,
+                &:before {
+                    content: "";
+                    position: absolute;
+                    width: 15px;
+                    height: 15px;
+                    border-radius: 3px;
+                    border: 1px solid rgba(121, 121, 121, 0.2);
+                    background: $bgYellowTrans_II;
+                }
+                &:before {
+                    background: transparent;
+                    transition: 0.1s width cubic-bezier(0.075, 0.82, 0.165, 1) 0s,
+                                0.25s height cubic-bezier(0.075, 0.82, 0.165, 2) 0.1s;
+                    z-index: 2;
+                    overflow: hidden;
+                    background-repeat: no-repeat;
+                    background-size: 9px;
+                    background-position-y: center;
+                    width: 0;
+                    height: 0;
+                    background-image: url(../assets/icons/checkmark_yellow2.png);
+                }
+                &:hover {
+                    color: $bgButtons;
+                    background: $bgHover;
+                    border-color: darken($bgHover, 5%);
+                }
+            }
+            input[type="checkbox"],
+            input[type="radio"] {
+                display: none;
+                position: absolute;
+                width: 100%;
+                appearance: none;
+                //box-shadow: $lightShadow;
+
+                &:checked + label {
+                    color: $bgButtons;
+                    background: lighten($accentcolor, 20%);
+                    background: $bgHover;
+                    animation-name: blink;
+                    animation-duration: 0.15s;
+                    border-color: $bgCheked;
+                    box-shadow: $lightShadowInset;
+
+                    &:after {
+                        background: $bgCheked;
+                        border: $borderYellowTrans;
+                        width: 16px;
+                        height: 16px;
+                    }
+                    &:before {
+                        width: 16px;
+                        height: 16px;
+                    }
+                }
+            }
+        }
+        .mealTypes {
+            flex-direction: column;
+            align-items: space-evenly;
+            height: 186px;
+            margin: 0 0;
+            padding: 10px 0 0 0;
+
+            .typerow {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                width: 100%;
+                height: 24px;
+                padding: 0 0;
+                margin: 1px auto 0 auto;
+            }
+            label {
+                &:after,
+                &:before {
+                    right: 6px;
+                    top: 4px;
+                }
+                &::before {
+                    background-position-x: 3px;
+                }
+            }
+        }
+        .diets {
+            flex-direction: column;
+            align-items: flex-start;
+            height: 175px;
+            margin: 0 0;
+            padding: 10px 0 0 0;
+
+            .checkBtn {
+                min-width: 94%;
+                height: 24px;
+                margin-bottom: 3px;
+            }
+            label {
+                height: 24px;
+                padding: 1px 0 0 32px;
+                text-align: left;
+
+                &:after,
+                &:before {
+                    left: 6px;
+                    top: 4px;
+                }
+                &::before {
+                    background-position-x: 3px;
+                }
+            }
+        }
+    }
+    .submitTypes {
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        height: 30px;
+        margin: 0 0;
+        margin: 0 0;
+        padding: 0 3.5% 4px 3.5%;
+
+        .submitBtn {
+            width: 60px;
+            height: 26px;
+            padding: 1px 4px;
+            color: $titleColor;
+            color: $bgButtons;
+            font-family: "Prompt";
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            background: $bgButtons;
+            background: $bgGreen;
+            background: $bgHover;
+            border: $bordersGreen;
+            border-radius: 3px;
+            box-shadow: $lightShadow;
+            cursor: pointer;
+            opacity: 0;
+
+            &:hover {
+                color: $bgButtons;
+                color: $titleColor;
+                background: $bgHover;
+                background: $bgGreen;
+                box-shadow: none;
+            }
+        }
     }
 }
 .recipeNav {
     width: 100%;
-    //max-width: 320px;
+    max-width: 100%;
+    height: 38px;
     margin: 0 0;
-    padding: 0 8px;
+    padding: 0 6px;
+    background-color: $bgDarkred;
+    border-top: $bordersGreenThik;
+    border-bottom: $bordersGreenThik;
+    z-index: 8;
 
-    a {
-        min-width: 103px;
+    .btn {
+        min-width: 94px;
+        max-width: 94px;
+        color: $titleColor;
         text-decoration: none;
         padding: 0 0;
+        margin: 0 0;
 
         .button {
             min-width: 92px;
-            height: 22px;
-            padding: 1px 4px 2px 4px;
-        }
-        .buttonOnload {
-            display: none;
-        }
-        .buttonVisible {
-            display: block;
-            animation: fadeIn 2s forwards;
-        }
-        .buttonHidden {
-            //display: none;
-            animation: fadeOutButton 2s forwards;
+            max-width: 92px;
+            height: 24px;
+            padding: 0 4px 2px 4px;
+            color: $titleColor;
+            font-family: "Prompt";
+            font-size: 12px;
+            letter-spacing: 0px;
+            background: $bgButtons;
+            border: $bordersGreen;
+            border-radius: 3px;
+            box-shadow: $boxShadow;
+            cursor: pointer;
+        
+            &:hover {
+                color: $bgButtons;
+                background: $bgHover;
+                box-shadow: none;
+            }
         }
     }
     .nameButton {
-        width: 110px;
+        height: 32px;
         margin: 0 auto;
-        padding: 0 0;
+        padding: 0 0 4px 0;
         background: transparent;
         border: none;
         cursor: pointer;
 
         .appName {
+            width: 106px;
             margin: 0 auto;
             padding: 0 0;
             color: $bgButtons;
@@ -425,11 +880,18 @@ body {
             text-shadow: 0 0 3px black;
         }
     }
+    .buttonOnload {
+        display: none;
+    }
+    .buttonVisible {
+        display: block;
+        animation: fadeIn 2s forwards;
+    }
+    .buttonHidden {
+        animation: fadeOutButton 2s forwards;
+    }
 }
 .bottomSection {
-    //background: url(../assets/img/bgPhotoSmall.jpg) no-repeat;
-    //background-size: cover;
-
     .recipeOneBox,
     .recipeTwoBox {
         width: 100%;
@@ -444,14 +906,13 @@ body {
             height: 34px;
             margin: 0 auto;
             padding: 0 0;
-            //background: $bgGreen;
             background: $bgYellowTrans_II;
             border-top: $bordersGreen;
             border-bottom: $bordersGreen;
 
             .boxTitle {
                 min-width: 100%;
-                height: 34px;
+                min-height: 34px;
                 margin: 0 auto;
                 padding: 6px 0 0 0;
                 font-family: "Quicksand";
@@ -468,18 +929,13 @@ body {
             width: 100%;
             min-height: 166px;
             margin: 0 0;
-            //padding: 6px 6px;
             padding: 0 0;
 
             .recipeContent {
                 box-sizing: content-box;
                 flex-direction: column;
-                //margin: 6px 6px;
                 margin: 0 0;
-                padding: 8px 8px;
-                //background: $bgYellowTrans_I;
-                //border: $bordersBrwon;
-                //border-radius: 4px;
+                padding: 4px 4px 8px 4px;
             }
             .contentHidden {
                 display: none;
@@ -516,7 +972,6 @@ body {
                 .recipeTitle {
                     margin: 0 0;
                     padding: 4px 6px 0px 6px;
-                    
                     
                     h4 {
                         color: $titleColor;
@@ -603,8 +1058,10 @@ body {
                     margin: 0 0;
 
                     img {
-                        width: 8px;
-                        height: 8px;
+                        min-width: 8px;
+                        max-width: 8px;
+                        min-height: 8px;
+                        max-height: 8px;
                         margin: 2px 0 0 0;
                     }
                     p {
@@ -639,42 +1096,62 @@ body {
                     }
                 }
             }
-            /*
-            .imgCol {
-                margin: 0 0;
-                padding: 0 0;
-            }
-            .textCol {
-                margin: 0 0;
-                padding: 0 0;
-            }
-            */
         }
     }
     .recipeOneBox {
         margin-top: -2px;
     }
-    /*
-    .recipeTwoBox {
-        .boxTitle {
-            border-top: $bordersGreen;
-        }
-    }
-    */
 }
-.navBottom {
+.navUp {
     position: fixed;
     right: 0px;
-    width: 10%;
-    max-height: 38px;
-    margin: 0 0 0 84%;
-    padding: 0 6px;
+    min-width: 12%;
+    max-width: 12%;
+    margin: 0 0 0 87.5%;
+    padding: 4px 6px;
     background: transparent;
     border: none;
-    opacity: 0;
+    z-index: 4;
 
-    a {
-        width: 100%;
+    .upLink {
+        min-width: 28px;
+        max-width: 28px;
+        color: $titleColor;
+        text-decoration: none;
+        padding: 0 0;
+        margin: 0 auto;
+        z-index: 4;
+    }
+    .upBtn {
+        min-width: 28px;
+        max-width: 28px;
+        min-height: 26px;
+        max-height: 26px;
+        padding: 2px 4px;
+        font-family: "Prompt";
+        font-size: 12px;
+        letter-spacing: 0px;
+        text-decoration: none;
+        background: $bgButtons;
+        border: $bordersGreen;
+        border-radius: 3px;
+        box-shadow: $boxShadow;
+        cursor: pointer;
+    }
+}
+.bottomNav {
+    width: 100%;
+    height: 36px;
+    padding: 0 6px;
+
+    .moreLink {
+        width: 50%;
+        padding: 2px 0;
+    }
+    .moreBtn {
+        min-height: 25px;
+        max-height: 25px;
+        padding: 0 6px;
     }
 }
 .sectionVisible {
@@ -686,7 +1163,7 @@ body {
     height: 0px;
 }
 
-
+/********** Animations ***********************************/
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -713,660 +1190,21 @@ body {
     }
 }
 
-@media (min-width: 342px) {
-    .selection,
-    .temporary,
-    .fridge {
-        padding: 2px 6% !important;
-    }
-    .navBottom {
-        margin: 0 0 0 85% !important;
-    }
-}
-@media (min-width: 375px) {
-    .selection,
-    .temporary,
-    .fridge {
-        padding: 2px 10% !important;
-    }
-    .recipeOneBox,
-    .recipeTwoBox {
-        background-position-x: 0px !important;
-    }
-}
-@media (min-width: 398px) {
-    .selection,
-    .temporary,
-    .fridge {
-        padding: 2px 13% !important;
-    }
-    .recipeTitleBox {
-        .photoBox {
-            display: block !important;
-        }
-    }
-    .recipeDetails {
-        .photoBox {
-            display: none !important;
-        }
-    }
-    .recipeContent {
-        padding-bottom: 14px !important;
-    }
-    .navBottom {
-        margin: 0 0 0 87% !important;
-    }
-}
-@media (min-width: 446px) {
-    .selection,
-    .temporary,
-    .fridge {
-        padding: 2px 16% !important;
-    }
-}
-@media (min-width: 464px) {
-    .selection,
-    .temporary,
-    .fridge {
-        max-width: 100% !important;
-    }
-}
-@media (min-width: 486px) {
-    .selection,
-    .temporary,
-    .fridge {
-        padding: 2px 19% !important;
-    }
-}
-@media (min-width: 512px) {
-    .recipeTitleBox {
-        .recipeTitle h4 {
-            font-size: 25px !important;
-            line-height: 36px !important;
-        }
-    }
-    .recipeContent {
-        padding-bottom: 20px !important;
-    }
-    .navBottom {
-        margin: 0 0 0 89.5% !important;
-    }
-}
-@media (min-width: 533px) {
-    .selection,
-    .temporary,
-    .fridge {
-        padding: 2px 22% !important;
-    }
-}
-@media (min-width: 576px) {
-    .topNav,
-    .recipeNav {
-        max-height: 44px !important;
-        padding: 4px 6px !important;
+/********** Responsiveness *******************************/
 
-        .appName {
-            margin: 2px auto 0 auto !important;
-            padding: 0 0 !important;
-            font-size: 20px !important;
-            font-weight: 400 !important;
-        }
-    }
-    .ingredientImgBox {
-        min-width: 64px !important;
-        max-width: 64px !important;
-        min-height: 56px !important;
-        max-height: 56px !important;
-        margin: 5px auto !important;
-    }
-    .ingredientImg {
-        width: 64px !important;
-        height: 56px !important;
-    }
-    .ingredientName {
-        width: 64px !important;
-        min-height: 34px !important;
-        max-height: 38px !important;
-        margin: 3px auto 0 auto !important;
-        padding: 2px 2px !important;
-        font-size: 11px !important;
-        letter-spacing: 1px !important;
-        line-height: 16px !important;
-    }
-    .recipeTwoBox {
-        margin-top: -2px !important;
-    }
-    .selectionsBox {
-        .selection {
-            min-height: 452px !important;
-            max-height: 452px !important;
-            margin: 0 auto !important;
-            padding: 2px 21% !important;
-        }
-        .ingredient {
-            width: 74px !important;
-            min-height: 106px !important;
-            max-height: 106px !important;
-            margin: 6px auto !important;
-        }
-    }
-    .fridgeBox {
-        margin-top: -2px !important;
-        border-left: $bordersGreen !important;
-
-        .temporary,
-        .fridge {
-            min-height: 226px !important;
-            max-height: 226px !important;
-            margin: 0 auto !important;
-            padding: 2px 21% !important;
-        }
-
-        .selected,
-        .myIngredient {
-            width: 74px !important;
-            min-height: 106px !important;
-            max-height: 106px !important;
-            margin: 6px auto !important;
-        }
-    }
-    .bottomSection {
-        .mainTitleBox {
-            min-height: 44px;
-
-            .boxTitle {
-                font-size: 28px !important;
-                font-weight: 500 !important;
-            }
-        }
-        .recipeContent {
-            padding-bottom: 26px !important;
-        }
-    }
-    .navBottom {
-        margin: 0 0 0 91% !important;
-    }
-}
-/*
-@media (min-width: 600px) {
-    .fridgeBox {
-        .temporary,
-        .fridge {
-            padding: 6px 46px !important;
-        }
-    }
-}
-@media (min-width: 600px) {
-    .fridgeBox {
-        .temporary,
-        .fridge {
-            padding: 6px 46px !important;
-        }
-    }
-}
-
-@media (min-width: 629px) {
-    .selectionsBox .selection {
-        max-width: 80% !important;
-    }
-    .fridgeBox {
-        .temporary,
-        .fridge {
-            padding: 6px 48px !important;
-        }
-    }
-}
-
-@media (min-width: 637px) {
-    .selectionsBox .selection {
-        max-width: 80% !important;
-    }
-    .fridgeBox {
-        .temporary,
-        .fridge {
-            padding: 6px 50px !important;
-        }
-    }
-}
-@media (min-width: 645px) {
-    .fridgeBox {
-        .temporary,
-        .fridge {
-            padding: 6px 56px !important;
-        }
-    }
-}
-
-@media (min-width: 644px) {
-    .selection,
-    .temporary,
-    .fridge {
-        padding: 6px 24% !important;
-    }
-    
-}
-
-@media (min-width: 674px) {
-    .selectionsBox .selection {
-        max-width: 69% !important;
-    }
-    .fridgeBox {
-        .temporary,
-        .fridge {
-            padding: 6px 23% !important;
-        }
-    }
-}
-*/
-@media (min-width: 700px) {
-    .ingredientImgBox {
-        min-width: 80px !important;
-        max-width: 80px !important;
-        min-height: 62px !important;
-        max-height: 62px !important;
-        margin: 6px auto !important;
-    }
-    .ingredientImg {
-        width: 80px !important;
-        height: 62px !important;
-    }
-    .ingredientName {
-        width: 80px !important;
-        min-height: 38px !important;
-        max-height: 42px !important;
-        margin: 4px auto 0 auto !important;
-        padding: 2px 2px !important;
-        font-size: 13px !important;
-        line-height: 17px !important;
-    }
-    .selectionsBox {
-        .selection {
-            padding: 6px 20% !important;
-        }
-        .ingredient {
-            width: 92px !important;
-            min-height: 118px !important;
-            max-height: 118px !important;
-        }
-    }
-    .fridgeBox {
-        .temporary,
-        .fridge {
-            padding: 6px 20% !important;
-        }
-        .selected,
-        .myIngredient {
-            width: 92px !important;
-            min-height: 118px !important;
-            max-height: 118px !important;
-        }
-    }
-    .bottomSection {
-        .mainTitleBox {
-            min-height: 52px;
-
-            .boxTitle {
-                font-size: 32px !important;
-                font-weight: 500 !important;
-            }
-        }
-    }
-    .recipeTitleBox {
-        .recipeTitle h4 {
-            font-size: 30px !important;
-            font-weight: 300 !important;
-            line-height: 40px !important;
-        }
-
-    }
-    .navBottom {
-        margin: 0 0 0 92.5% !important;
-    }
-}
-@media (min-width: 793px) {
-    .ingredientImgBox {
-        min-width: 90px !important;
-        max-width: 90px !important;
-        min-height: 78px !important;
-        max-height: 78px !important;
-        margin: 4px auto !important;
-    }
-    .ingredientImg {
-        width: 90px !important;
-        height: 78px !important;
-    }
-    .ingredientName {
-        width: 90px !important;
-        min-height: 40px !important;
-        max-height: 40px !important;
-        margin: 3px auto 0 auto !important;
-        padding: 1px 2px !important;
-        font-size: 14px !important;
-        line-height: 16px !important;
-    }
-    .selectionsBox {
-        .ingredient {
-            width: 100px !important;
-            min-height: 130px !important;
-        }
-    }
-    .fridgeBox {
-        .selected,
-        .myIngredient {
-            width: 100px !important;
-            min-height: 130px !important;
-        }
-    }
-    .navBottom {
-        margin: 0 0 0 93.5% !important;
-    }
-}
-@media (min-width: 840px) {
-    body {
-        background: url(../assets/img/bgPhotoWide.jpg) no-repeat !important;
-        background-size: cover!important;
-        background-position-y: 20px !important;
-        background-attachment: fixed !important;
-    }
-    .recipeOneBox,
-    .recipeTwoBox {
-        background: url(../assets/img/bgPhotoWide.jpg) no-repeat !important;
-        background-size: cover !important;
-    }
-}
-/*
-@media (min-width: 850px) {
-    .selectionsBox .selection {
-        max-width: 80% !important;
-    }
-}
-@media (min-width: 880px) {
-    .fridgeBox {
-        .temporary,
-        .fridge {
-            padding: 6px 61px !important;
-        }
-    }
-}
-*/
-@media (min-width: 960px) {
-    .ingredientImgBox {
-        min-width: 100px !important;
-        max-width: 100px !important;
-        min-height: 90px !important;
-        max-height: 90px !important;
-        margin: 6px auto !important;
-    }
-    .ingredientImg {
-        width: 100px !important;
-        height: 90px !important;
-    }
-    .ingredientName {
-        width: 100px !important;
-        min-height: 40px !important;
-        max-height: 44px !important;
-        margin: 3px auto 0 auto !important;
-        padding: 5px 2px !important;
-        font-size: 16px !important;
-        line-height: 17px !important;
-    }
-    .selectionsBox {
-        .selection {
-            max-width: 100% !important;
-            padding: 6px 12% !important;
-        }
-        .ingredient {
-            width: 114px !important;
-            min-height: 152px !important;
-        }
-    }
-    .fridgeBox {
-        .temporary,
-        .fridge {
-            padding: 6px 12% !important;
-        }
-        .selected,
-        .myIngredient {
-            width: 114px !important;
-            min-height: 152px !important;
-        }
-    }
-    .navBottom {
-        margin: 0 0 0 94.5% !important;
-    }
-}
+/********** Responsiveness WIDTH *************************/
 @media (min-width: 992px) {
-    .recipeTitleBox .recipeTitle h4 {
-        font-size: 24px !important;
-    }
-    .recipeContent {
-        padding: 12px 12px !important;
+    .bottomSection {
+        .recipeOneBox, 
+        .recipeTwoBox {
+            background: url(../assets/img/bgPhotoOriginal.jpg);
+            //background-position-y: 80px !important;
+            background-size: cover !important;
+        }
     }
     .recipeTwoBox {
-        border-left: $bordersGreen !important;
-    }
-}
-@media (min-width: 1200px) {
-    .selectionsBox,
-    .fridgeBox {
-        .titleBox {
-            height: 40px !important;
-
-            .selectionTitle,
-            .fridgeTitle {
-                font-size: 22px !important;
-                padding: 7px 0 0 0 !important;
-            }
-        }
-    }
-    .selectionsBox {
-        .selection {
-            min-height: 452px !important;
-            max-height: 452px !important;
-            margin: 0 auto !important;
-            padding: 6px 10% !important;
-        }
-    }
-    .fridgeBox {
-        .temporary,
-        .fridge {
-            max-width: 100% !important;
-            min-height: 226px !important;
-            max-height: 226px !important;
-            margin: 0 auto !important;
-            padding: 6px 10% !important;
-        }
-    }
-    .recipeTitleBox .recipeTitle h4 {
-        font-size: 28px !important;
-    }
-    .recipeContent {
-        padding: 14px 14px !important;
-    }
-    .navBottom {
-        margin: 0 0 0 95.5% !important;
-    }
-}
-@media (min-width: 1280px) {
-    .navBottom {
-        margin: 0 0 0 96% !important;
-    }
-}
-/*
-@media (min-width: 1295px) {
-    .selectionsBox {
-        .selection {
-            max-width: 88% !important;
-        }
-    }
-    .fridgeBox {
-        .temporary,
-        .fridge {
-            padding: 6px 44px !important;
-        }
-    }
-}
-*/
-@media (min-width: 1324px) {
-    body {
-        background: url(../assets/img/bgPhotoWide.jpg) no-repeat !important;
-        background-size: cover !important;
-        background-position-y: 20px !important;
-        background-attachment: fixed !important;
-    }
-    .recipeContent {
-        padding: 20px 20px !important;
-    }
-    /*
-    .selectionsBox {
-        .selection {
-            max-width: 87% !important;
-            padding: 6px 12px !important;
-        }
-    }
-    .fridgeBox {
-        .temporary,
-        .fridge {
-            padding: 6px 56px !important;
-        }
-    }
-    */
-}
-/*
-@media (min-width: 1357px) {
-    .selectionsBox {
-        .selection {
-            max-width: 86% !important;
-        }
-    }
-    .fridgeBox {
-        .temporary,
-        .fridge {
-            padding: 6px 58px !important;
-        }
-    }
-}
-@media (min-width: 1373px) {
-    .selectionsBox {
-        .selection {
-            max-width: 85% !important;
-        }
-    }
-    .fridgeBox {
-        .temporary,
-        .fridge {
-            padding: 6px 66px !important;
-        }
-    }
-}
-
-@media (min-width: 1399px) {
-    .selectionsBox {
-        .selection {
-            max-width: 80% !important;
-        }
-    }
-    .fridgeBox {
-        .temporary,
-        .fridge {
-            padding: 6px 80px !important;
-        }
-    }
-}
-*/
-@media (min-width: 1426px) {
-    .selectionsBox {
-        .selection {
-            padding: 6px 12% !important;
-        }
-    }
-    .fridgeBox {
-        .temporary,
-        .fridge {
-            padding: 6px 12% !important;
-        }
-    }
-    .recipeTitleBox {
-        padding: 6px 8px !important;
-
-        .recipeTitle h4 {
-            font-size: 32px !important;
-            letter-spacing: 2px !important;
-            line-height: 50px !important;
-        }
-        .photoBox {
-            max-width: 166px !important;
-            min-width: 166px !important;
-            max-height: 136px !important;
-            min-height: 136px !important;
-        }
-        .recipePhoto {
-            margin: 0 auto !important;
-            width: 100%;
-            height: 100%;
-        }
-    }
-}
-/*
-@media (min-width: 1480px) {
-    .selectionsBox {
-        .selection {
-            max-width: 78% !important;
-        }
-    }
-    .fridgeBox {
-        .temporary,
-        .fridge {
-            padding: 6px 96px !important;
-        }
-    }
-}
-*/
-@media (min-width: 1500px) {
-    .selectionsBox {
-        .selection {
-            padding: 6px 16% !important;
-        }
-    }
-    .fridgeBox {
-        .temporary,
-        .fridge {
-            padding: 6px 16% !important;
-        }
-    }
-    .recipeContent {
-        padding: 28px 28px !important;
-    }
-}
-@media (min-width: 1678px) {
-    .selectionsBox {
-        .selection {
-            padding: 6px 18% !important;
-        }
-    }
-    .fridgeBox {
-        .temporary,
-        .fridge {
-            padding: 6px 18% !important;
-        }
-    }
-    .recipeContent {
-        padding: 32px 32px !important;
-    }
-}
-@media (min-width: 1783px) {
-    .selectionsBox {
-        .selection {
-            padding: 6px 20% !important;
-        }
-    }
-    .fridgeBox {
-        .temporary,
-        .fridge {
-            padding: 6px 20% !important;
-        }
-    }
-    .recipeContent {
-        padding: 36px 36px !important;
+        width: 50%;
+        margin-top: -2px !important;
+        border-left: $bordersGreen;
     }
 }

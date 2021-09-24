@@ -2,28 +2,30 @@ $bgDarkred: #800018;
 $bgGreen: #8D8F53;
 $bgBrown: #78564C;
 
-$bgBrownTrans_I: rgba(150, 103, 45, 0.7);
-$bgBrownTrans_II: rgba(87, 58, 24, 0.6);
-$bgGrayTrans: rgba(255, 255, 255, 0.4);
+$bgBrownTrans_I: rgba(150, 103, 45, 0.68);
+$bgBrownTrans_II: rgba(94, 62, 26, 0.5);
+$bgGrayTrans: rgba(48, 48, 48, 0.68);
 $bgGreenTrans: rgba(131, 153, 96, 0.8);
-$bgYellowTrans_I: rgba(184, 170, 100, 0.4);
+$bgYellowTrans_I: rgba(#fdcb3f, 0.68);
 $bgYellowTrans_II: rgba(242, 220, 107, 0.3);
 
 $bordersGreen: 1px solid #013d3d;
 $bordersGreenTrans: 1px solid rgba(#013d3d, .5);
 $bordersGreenThik: 2px solid #013d3d;
 $bordersBrwon: 1px solid #684b42;
-$bordersBrwonTrans: 1px solid rgba(#684b42, .5);
+$bordersYellowTrans: 1px solid rgba(184, 170, 100, .8);
 
 $bgButtons: #fdcb3f;
 $borderButtons: 1px solid #013d3d;
 $borderHover: 1px solid #1c6672;
+$bgHover: #1c6672;
 
 $titleColor: #013d3d;
 $textColor: #ffffff;
+$listColor: #0f2e24;
 $inputText: #503b34;
 $bgText: rgba(120, 86, 76, 0.6);
-$linkHover: #296b0b;
+$linkHover: #03573e;
 
 $bgPhotos: #8c5f27;
 
@@ -38,18 +40,24 @@ $boxShadowInset: inset 0 0 2px 1px rgba(65, 65, 65, .6), inset 0 0 1px 0 rgb(0,0
     margin: 0 0;
 }
 .navbar {
-    height: 38px;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 40px;
+    max-height: 40px;
     background-color: $bgDarkred;
     border-top: $bordersGreenThik;
     border-bottom: $bordersGreenThik;
 
     .button {
-        width: 90px;
-        max-height: 29px;
+        min-width: 92px;
+        max-width: 92px;
+        max-height: 24px;
+        margin: 0 -4px;
         padding: 2px 2px;
         color: $titleColor;
         font-family: "Prompt";
         font-size: 12px;
+        letter-spacing: 0px;
         background: goldenrod;
         border: $bordersGreen;
         border-radius: 3px;
@@ -62,79 +70,77 @@ $boxShadowInset: inset 0 0 2px 1px rgba(65, 65, 65, .6), inset 0 0 1px 0 rgb(0,0
         }
     }
     .appName {
-        margin: 1px 0 0 0;
+        margin: 1px 8px 0 8px;
         padding: 0 0;
-        color: #F2B035;
+        color: $bgButtons;
         font-family: "Saira Semi Condensed";
         font-size: 16px;
         font-weight: 300;
         text-align: center;
         letter-spacing: 1px;
-        text-shadow: 0 0 2px black;
+        text-shadow: 0 0 3px black;
     }
 }
 .infoTopNav {
     margin: 0 0;
     padding: 0 0;
 }
-.topSection {
+.topSection,
+.bottomSection {
     width: 100%;
     margin: 0 0;
     padding: 0 0;
+    background: url(../assets/img/bgPhotoSmall.jpg) no-repeat;
+    background-size: cover;
+}
+.explainBox {
+    width: 100%;
+    min-height: 248px;
+    margin: 0 0;
+    padding: 0 0;
 
-    .sectionBg {
-        background: url(../assets/img/bgPhotoSmall.jpg) no-repeat;
-        background-size: cover;
-    }
+    .explainTitleBox {
+        height: 32px;
+        margin: -3px 0 0 0;
+        padding: 5px 0;
+        background: $bgGreen;
+        border-top: $bordersGreen;
+        border-bottom: $bordersGreen;
 
-    .explainBox {
-        width: 100%;
-        min-height: 248px;
-        //background: $bgYellowTrans_II;
-
-        .boxTitle {
-            height: 34px;
-            margin: -3px 0 0 0;
-            padding-top: 6px;
+        .explainTitle {
             font-family: "Quicksand";
             font-size: 18px;
             font-weight: 700;
             text-align: center;
             letter-spacing: 2px;
+            text-shadow: 0 0 4px white;
             text-transform: uppercase;
-            background: $bgGreenTrans;
-            border-top: $bordersGreen;
-            border-bottom: $bordersGreen;
-            text-shadow: 0 0 10px white;
         }
     }
-    .explainBox {
-        .explainText {
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            margin: 10px 0 20px 0;
-            padding: 7px 6px;
-            background: $bgYellowTrans_I;
-            border: $bordersBrwonTrans;
-            border-radius: 2px;
-        }
+    .explainTextBox {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin: 0 0;
+        padding: 3% 3% 20px 3%;
+        background: $bgGrayTrans;
+
         .explainSubTitles {
-            width: 56%;
+            width: 50%;
             height: 28px;
             margin: 8px 0 4px 0;
             padding: 4px 8px 0 8px;
-            color: $titleColor;
+            color: $listColor;
             font-family: "Prompt";
             font-size: 15px;
-            font-weight: 400;
+            font-weight: 500;
             letter-spacing: 1px;
-            background: $bgGreenTrans;
-            border: $bordersGreenTrans;
-            border-radius: 2px;
+            background: $bgGreen;
+            border: $bordersYellowTrans;
+            border-radius: 3px;
         }
         .topSubTitle {
-            margin: 0 0 4px 0;
+            margin: 6px 0 4px 0;
         }
         .partText {
             margin: 0 0 8px 0;
@@ -145,159 +151,162 @@ $boxShadowInset: inset 0 0 2px 1px rgba(65, 65, 65, .6), inset 0 0 1px 0 rgb(0,0
             font-size: 12px;
             font-weight: 100;
             letter-spacing: 1px;
-            line-height: 16px;
+            line-height: 20px;
             background: $bgBrownTrans_I;
-            border: $bordersBrwonTrans;
+            //background: $bgYellowTrans_I;
+            border: $bordersYellowTrans;
             border-radius: 2px;
             text-shadow: 0 1px 2px black;
 
             span {
+                font-weight: 400;
+            }
+            .step {
                 color: $bgButtons;
                 //color: $titleColor;
                 font-size: 13px;
                 font-weight: 200;
                 letter-spacing: 2px;
-                text-shadow: 0 1px 2px black;
+                //text-shadow: 0 1px 2px black;
             }
             a {
-                color: rgb(0, 78, 97);
+                color: #57a8f3;
+                font-size: 15px;
+                font-weight: 200;
                 letter-spacing: 0px;
                 text-decoration: none;
-                text-shadow: 0 0 1px black;
+                text-shadow: none;
 
                 &:hover {
-                    color: $linkHover;
+                    color: $bgYellowTrans_I;
                 }
             }
         }
     }
 }
-.bottomSection {
+.contactBox {
     width: 100%;
+    min-height: 248px;
     margin: 0 0;
     padding: 0 0;
 
-    .sectionBg {
-        background: url(../assets/img/bgPhotoSmall.jpg) no-repeat;
-        background-size: cover;
-    }
+    .contactTitleBox {
+        height: 32px;
+        margin: 0 0 0 0;
+        padding: 5px 0;
+        background: $bgGreen;
+        border-top: $bordersGreen;
+        border-bottom: $bordersGreen;
 
-    .contactBox {
-        width: 100%;
-        min-height: 248px;
-        //background: $bgYellowTrans_II;
-
-        .boxTitle {
-            height: 36px;
-            margin: 0 0;
-            padding-top: 6px;
+        .contactTitle {
             font-family: "Quicksand";
             font-size: 18px;
-            font-weight: 600;
+            font-weight: 700;
             text-align: center;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            text-shadow: 0 0 4px white;
             text-transform: uppercase;
-            background: $bgGreenTrans;
-            border-top: $bordersGreen;
-            border-bottom: $bordersGreen;
-            text-shadow: 0 0 10px white;
         }
-        .form,
-        .comment {
+    }
+    .contactFormBox {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin: 0 0;
+        padding: 3% 3% 20px 3%;
+        background: $bgGrayTrans;
+
+        .form {
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
-            margin: 8px 0 6px 0;
-            padding: 7px 6px;
-            background: $bgYellowTrans_I;
-            border: $bordersBrwon;
+            justify-content: center;
+            margin: 0 0;
+            padding: 0 0;
+        }
+        .nameForm,
+        .commentsForm,
+        .submitForm {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 0 0 16px 0;
+            padding: 0 0;
+        }
+        .inputLabel {
+            width: 50%;
+            height: 28px;
+            margin: 8px 0 4px 0;
+            padding: 4px 8px 0 8px;
+            color: $listColor;
+            font-family: "Prompt";
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            background: $bgGreen;
+            border: $bordersYellowTrans;
+            border-radius: 3px;
+        }
+        .topLabel {
+            margin: 8px 0 4px 0;
+        }
+        .textareaLabel {
+            width: 74%;
+            height: 28px;
+            margin: 0 0 4px 0;
+        }
+        input,
+        textarea {
+            margin: 0 0 4px 0;
+            padding: 4px 8px 2px 8px;
+            color: $inputText;
+            color: white;
+            font-family: "Prompt";
+            font-size: 13px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            background: $bgYellowTrans_II;
+            border: $bordersYellowTrans;
             border-radius: 4px;
+            box-shadow: inset 0 0 2px 1px rgba(0, 0, 0, 0.4);
 
-            .inputLabel {
-                width: 44%;
-                height: 28px;
-                margin: 8px 0 4px 0;
-                padding: 0 8px 2px 8px;
-                color: $titleColor;
-                font-family: "Prompt";
-                font-size: 16px;
-                font-weight: 400;
-                letter-spacing: 1px;
-                background: $bgGreenTrans;
-                border: $bordersGreen;
-                border-radius: 4px;
+            &::placeholder {
+                color: white;
+                font-family: "Dosis";
+                font-weight: 200;
+                letter-spacing: 2px;
+                opacity: .7;
             }
-            .topLabel {
-                margin: 0 0 4px 0;
-            }
-            .textareaLabel {
-                width: 84%;
-                height: 28px;
-                margin: 0 0 4px 0;
-            }
-            input,
-            textarea {
-                margin: 0 0 4px 0;
-                padding: 4px 8px 2px 8px;
-                color: $inputText;
-                font-family: "Prompt";
-                font-size: 13px;
-                font-weight: 400;
-                letter-spacing: 1px;
-                background: $bgYellowTrans_II;
-                background: $bgGrayTrans;
-                border: $bordersBrwon;
-                border-radius: 4px;
-                //text-shadow: 0 0 2px black;
-                box-shadow: inset 0 0 2px 1px rgba(0, 0, 0, 0.4);
-
-                &::placeholder {
-                    color: rgba(0, 0, 0, 0.8);
-                    font-family: "Dosis";
-                    font-weight: 300;
-                    text-shadow: none;
-                }
-                &:hover {
-                    border: $borderHover;
-                    box-shadow: inset 0 0 2px 1px rgba(0, 0, 0, 0.4);
-                }
+            &:hover {
+                border: $borderHover;
+                //box-shadow: inset 0 0 2px 1px rgba(0, 0, 0, 0.4);
+                box-shadow: none;
             }
         }
-        .submit {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            margin: 8px 0 48px 0;
-            padding: 7px 6px;
-            background: $bgYellowTrans_I;
-            border: $bordersBrwon;
+        .sendForm {
+            width: 100%;
+            height: 32px;
+            margin: 0 0 16px 0;
+            padding: 2px 8px;
+            color: $bgButtons;
+            font-family: "Prompt";
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-shadow: 0 1px 2px black;
+            background: #1c7481;
+            border: $borderHover;
             border-radius: 4px;
+            box-shadow: $boxShadow;
 
-            .sendForm {
-                width: 100%;
-                height: 28px;
-                margin: 0 0;
-                padding: 0 8px 2px 8px;
-                color: $bgButtons;
-                font-family: "Prompt";
-                font-size: 16px;
-                font-weight: 400;
-                letter-spacing: 2px;
-                text-shadow: 0 1px 2px black;
-                background: #208494;
-                border: $borderHover;
-                border-radius: 4px;
-                box-shadow: $boxShadow;
-
-                &:hover {
-                    background: $linkHover;
-                    border: $bordersGreen;
-                    box-shadow: none;
-                }
+            &:hover {
+                background: $linkHover;
+                border: $bordersGreen;
+                box-shadow: none;
             }
         }
     }
 }
+
 .infBottomNav {
     position: fixed;
     margin: 0 0;
@@ -327,5 +336,67 @@ $boxShadowInset: inset 0 0 2px 1px rgba(65, 65, 65, .6), inset 0 0 1px 0 rgb(0,0
     }
     100% {
         opacity: 0;
+    }
+}
+
+@media (min-width: 992px) {
+    .explainBox {
+        padding: 0 0 22px 0 !important;
+
+        .explainTextBox {
+            padding: 5% 5% 20px 5% !important;
+        }
+    }
+    .contactBox {
+        border-left: $bordersGreen;
+
+        .contactFormBox {
+            padding: 5% 5% 20px 5% !important;
+        }
+        .contactTitleBox {
+            margin: -3px 0 0 0 !important;
+        }
+
+        .contactFormBox {
+            min-height: 1080px !important;
+        }
+    }
+}
+@media (min-width: 1020px) {
+    .contactBox .contactFormBox {
+        min-height: 1060px !important;
+    }
+}
+@media (min-width: 1137px) {
+    .contactBox .contactFormBox {
+        min-height: 1020px !important;
+    }
+}
+@media (min-width: 1280px) {
+    .explainBox .explainTextBox {
+        padding: 8% 8% 20px 8% !important;
+    }
+    .contactBox .contactFormBox {
+        padding: 8% 8% 20px 8% !important;
+    }
+}
+@media (min-width: 1325px) {
+    .contactBox .contactFormBox {
+        min-height: 1030px !important;
+    }
+}
+@media (min-width: 1573px) {
+    .contactBox .contactFormBox {
+        min-height: 1010px !important;
+    }
+}
+@media (min-width: 1603px) {
+    .contactBox .contactFormBox {
+        min-height: 1000px !important;
+    }
+}
+@media (min-width: 1710px) {
+    .contactBox .contactFormBox {
+        min-height: 960px !important;
     }
 }
